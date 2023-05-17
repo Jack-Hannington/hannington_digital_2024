@@ -1,0 +1,80 @@
+/*
+Theme Name: Altius Healthcare 2023
+Theme URI: http://hanningtondigital.com/altius
+Author: Jack Hannington
+Author URI: hannigtondigital.com
+Description: Modern light theme for Altius Healthcare
+Version: 1.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: altius_healthcare
+*/
+
+:root {
+    --bg-color: #F6F5F5;
+    --body-text-color: #051F29;
+    --body-font-size: 1rem;
+    --altius-blue: #1BA6AC;
+}
+
+/*---- FONTS ----*/
+
+
+@font-face {
+    font-family: 'Inter';
+    src: url('assets/fonts/inter/Inter-VariableFont_slnt,wght.ttf') format('truetype');
+    font-weight: 100 900;
+    font-style: oblique 0deg 10deg;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Manrope';
+    src: url('assets/fonts/manrope/Manrope-VariableFont_wght.ttf') format('truetype');
+    font-weight: 100 900;
+    font-style: oblique 0deg 10deg;
+    font-display: swap;
+}
+
+/*---- LAYOUT ----*/
+
+/* Center default container */
+
+.container {
+    margin:auto;
+}
+
+/*--- HEADINGS ----*/
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Manrope', 'Inter', sans-serif;
+    font-weight: 700;
+}
+
+/* Text preceding a section's heading */
+
+.brow-text {
+    color:var(--altius-blue);
+    margin-bottom:5px;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 1rem;
+    color: #212529;
+    text-align: left;
+    line-height: 1.6;
+    background-color: var(--bg-color);
+}
+
+/* Override Wordpress defaults */
+
+.wp-block-button__link {
+    border-radius: 4px;  
+    background-color: var(--altius-blue); 
+    color: #ffffff; 
+    padding: 6px 20px;
+    font-size: var(--body-font-size);
+}
+
