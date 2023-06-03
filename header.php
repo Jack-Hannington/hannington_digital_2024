@@ -30,7 +30,7 @@
     <div id="nav-toggle" class="menu-toggle nav-item">
       <!-- <button id="showMenu">Menu</button> -->
       <!-- <button id="showMenu">&#9776;</button> -->
-      <div id="showMenu">
+      <div id="showMenu" class="nav-toggle">
   <span></span>
   <span></span>
   <span></span>
@@ -48,9 +48,11 @@
         }
         ?> 
         </div>
-        <div class="nav-item menu-number">0161 401 1000</div>
+        <!-- <div class="nav-item menu-number">0161 401 1000</div> -->
         <div class="nav-item close-menu">
-        <button class="nav-item" id="closeMenu">Close</button>
+        <div id="closeMenu" class="nav-toggle">
+  <span>&times;</span>
+</div>
         </div>
       </div>
       <div class="menu-body">
@@ -68,11 +70,11 @@
         )); ?>
       </div>
     </div>
-    <!-- <div id="nav-cta" class="nav-item menu-cta ">
+    <div id="nav-cta" class="nav-item menu-cta ">
       <button class="altius-btn__primary">
         Book
       </button>
-    </div> -->
+    </div>
   </div>
 </nav>
 
