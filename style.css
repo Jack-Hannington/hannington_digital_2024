@@ -148,7 +148,7 @@ nav {
   border-bottom:1px solid #626262;
 }
 
-.menu {
+.menu, .sub-menu {
   list-style-type:none;
   padding-inline-start:0;
   margin-block-start: 0;
@@ -176,6 +176,27 @@ nav {
   margin:15px;
   background-color: var(--altius-light-grey);
 }
+
+/* Hide sub-menu by default */
+.sub-menu {
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.5s ease;
+  display: none;
+}
+
+/* Show sub-menu on hover */
+.menu-item-has-children:hover .sub-menu {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Class to show sub-menu */
+/* .visible {
+  opacity: 1 !important;
+  visibility: visible !important;
+} */
+
 
 /* remove this */
 
@@ -228,6 +249,10 @@ nav {
   }
     .menu-toggle, #closeMenu, .mobile-menu-logo, .menu-header, .menu-number, .menu-footer {
     display:none;
+  }
+  .menu-item-has-children > .sub-menu {
+      position: fixed;
+
   }
 }
 

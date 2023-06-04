@@ -75,3 +75,22 @@ mediaQueryList.addEventListener('change', checkViewportWidth);
 
   
   
+document.addEventListener("DOMContentLoaded", function() {
+  // Get all menu items that have children
+  var menuItems = document.querySelectorAll('.menu-item-has-children');
+
+  // Add click event to each of them
+  menuItems.forEach(function(menuItem) {
+      menuItem.addEventListener('click', function(event) {
+          // Prevent the page from navigating to the link on click
+          event.preventDefault();
+
+          // Get the sub-menu of the clicked menu item
+          var subMenu = this.querySelector('.sub-menu');
+
+          // Toggle the class for the sub-menu
+          subMenu.classList.toggle('visible');
+          subMenu.classList.toggle('animate__fadeInDown');
+      });
+  });
+});
