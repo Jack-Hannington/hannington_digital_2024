@@ -18,7 +18,7 @@
     <header id="masthead" class="site-header">
 <!-- Start of Navbar -->
 <nav>
-  <div class="navbar">
+  <div class="navbar container">
     <div id="nav-logo" class="logo nav-item">
       <?php
         if (function_exists('the_custom_logo')) {

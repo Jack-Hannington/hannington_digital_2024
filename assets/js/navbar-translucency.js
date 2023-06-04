@@ -13,6 +13,16 @@
 
 const menu = document.querySelector(".menu-container");
 
+
+//Check is admin bar is shown - if it then add additional class to container-fluid so it doesn't overlap
+document.addEventListener("DOMContentLoaded", function(event) {
+  if (document.querySelector("#wpadminbar")) {
+  console.log('admin bar is shown');
+  document.querySelector('nav').classList.add('admin-margin');
+  document.querySelector('.menu-container').classList.add('admin-margin');
+}});
+
+
 document.querySelector("#showMenu").addEventListener("click", () => {
   document.body.style.overflowY = "hidden"; //Prevent scrolling when animating
   menu.classList.remove("show", "animate__slideOutRight");
@@ -32,6 +42,7 @@ const checkViewportWidth = () => {
     if (mediaQueryList.matches) {
         // If viewport is 1000px or wider, remove the class
         menu.classList.remove('animate__slideOutRight');
+        menu.classList.remove('admin-margin');
     } else {
         // If viewport is less than 1000px wide, add the class
         menu.classList.add('animate__slideOutRight');
@@ -59,13 +70,6 @@ mediaQueryList.addEventListener('change', checkViewportWidth);
 //     }
 //     lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // For negative scrolling
 // });
-
-//Check is admin bar is shown - if it then add additional class to container-fluid so it doesn't overlap
-document.addEventListener("DOMContentLoaded", function(event) {
-    if (document.querySelector("#wpadminbar")) {
-    console.log('admin bar is shown');
-    document.querySelector('.container-fluid').classList.add('admin-margin');
-}});
 
 
 

@@ -65,19 +65,20 @@ body {
 nav {
   width:100%;
   margin:0;
-  position:relative;
+  position:fixed;
+  background-color: var(--altius-dark-grey);
+  top:0;
+  box-shadow: 0px 3px 7px 3px rgb(0 0 0 / 23%);
 }
 
 .navbar {
-  position:fixed;
   transition:0.3s;
-  z-index:1000;
-  top:0;
+  z-index:1;
   display: flex;
+  background-color: var(--altius-dark-grey);
   width:100%; 
   justify-content:space-between;
   padding:10px 15px;
-  background-color: var(--altius-dark-grey);
   color:var(--altius-light-grey)
 }
 
@@ -144,7 +145,7 @@ nav {
   justify-content: space-between;
   align-items: center;
   padding:15px;
-  border-bottom: 1px solid grey;
+  border-bottom:1px solid #626262;
 }
 
 .menu {
@@ -155,13 +156,19 @@ nav {
 }
 
 .menu li {
-  padding: 10px 15px;
-  border-bottom:1px solid #d8d8d8;
+  border-bottom:1px solid #626262;
 }
+
 .menu li a {
   color: var(--altius-light-grey);
-  text-decoration:none;
+  text-decoration: none;
+  width: 100%;
+  padding: 15px 15px;
+  height: 100%;
+  display: block;
+  font-weight: 300;
 }
+
 .menu-cta {
   display: none;
 }
@@ -181,13 +188,13 @@ nav {
   flex-direction: column;
 }
 
-@media (min-width:500px){
+@media (min-width:1000px){
   .navbar {
     align-items:center;
   }
   .nav-item {
     display:flex;
-    flex:2;
+    flex:1;
   }
   .menu-cta {
     text-align:right;
@@ -210,6 +217,8 @@ nav {
     justify-content:space-between;
     background: var(--altius-dark-grey);
     white-space: nowrap;
+    font-size: 0.9rem;
+    font-weight: 300;
   }
   .menu-body li {
     border-bottom:none;
@@ -233,21 +242,15 @@ nav {
 
 
 
-/* Logged-in User Admin Menu Bar Fix */
-body.admin-bar .navbar {
-    top: 32px;
-}
+/* Logged-in User Admin Menu Menu */
 
-.admin-margin {
-  margin-top: 120px;
+.admin-margin{
+  top: 32px;
 }
 
 @media screen and (max-width: 782px) {
-    body.admin-bar .navbar {
+    .admin-bar {
         top: 46px;
-    }
-    .admin-margin {
-        margin-top: 134px;
     }
 }
 
@@ -315,6 +318,12 @@ h6 {
 .altius-btn__primary {
     background-color: var(--altius-blue);
     color: #F6F5F5;
+}
+
+/* Images */
+
+img {
+  max-width: 100%;
 }
 
 /* Media queries */
