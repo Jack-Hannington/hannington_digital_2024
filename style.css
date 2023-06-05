@@ -24,6 +24,8 @@ Text Domain: altius_healthcare
   box-sizing: border-box;
 }
 
+
+
 /*---- FONTS ----*/
 
 
@@ -66,17 +68,18 @@ nav {
   width: 100%;
   margin: 0;
   position: fixed;
-  background-color: rgba(32, 33, 34, 0.86);
+  background-color: var(--altius-dark-grey);
   transition: 0.3s ease-in;
   top: 0;
   box-shadow: 0px 3px 7px 3px rgb(0 0 0 / 23%);
 }
 
-.translucent-bg {
+/* .translucent-bg {
   backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   background-color: rgba(32, 33, 34, 0.86);
   transition: background-color 0.3s ease;
-}
+} */
 
 .navbar {
   transition: 0.3s;
@@ -94,7 +97,7 @@ nav {
 }
 
 .custom-logo {
-  width: 70px;
+  width: 60px;
   height: auto;
   transition: 0.3s ease-in;
 }
@@ -102,7 +105,7 @@ nav {
 .menu-container {
   position: fixed;
   top: 0;
-  background-color: #3f3f40;
+  background-color: var(--altius-dark-grey);
   width: calc(100%);
   height: 100vh;
   left: 0px;
@@ -214,7 +217,7 @@ nav {
   z-index: -1;
   text-align: center;
   width: 100%;
-  top:90px;
+  top:80px;
   padding:6px;
 }
 
@@ -318,7 +321,7 @@ nav {
   }
 
   .sub-menu {
-    background-color: rgb(33 33 34 / 86%);
+    background-color: #444446;
   }
 
   /* Show sub-menu on hover */

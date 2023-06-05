@@ -1,26 +1,24 @@
-jQuery(document).ready(function($) {
-    $(window).scroll(function() {
-        var scrollTop = $(this).scrollTop();
-        if (scrollTop > 20) {
-          //add translucent class to nav
-          $('nav').addClass('translucent-bg ');
-        } else {
-          $('nav').removeClass('translucent-bg');
-        }
-    });
-});
+// jQuery(document).ready(function($) {
+//     $(window).scroll(function() {
+//         var scrollTop = $(this).scrollTop();
+//         if (scrollTop > 20) {
+//           //add translucent class to nav
+//           $('nav').addClass('translucent-bg ');
+//         } else {
+//           $('nav').removeClass('translucent-bg');
+//         }
+//     });
+// });
 
 // Toggle menu
 
 const menu = document.querySelector(".menu-container");
-
 
 //Check is admin bar is shown - if it then add additional class to container-fluid so it doesn't overlap
 document.addEventListener("DOMContentLoaded", function(event) {
   if (document.querySelector("#wpadminbar")) {
   console.log('admin bar is shown');
   document.querySelector('nav').classList.add('admin-margin');
-  document.querySelector('.alert-bar').classList.add('admin-margin');
   // document.querySelector('.menu-container').classList.add('admin-margin');
 }});
 
@@ -58,11 +56,6 @@ checkViewportWidth();
 // Then set it up to be called every time the viewport width changes
 mediaQueryList.addEventListener('change', checkViewportWidth);
 
-
-
-
-
-  
 document.addEventListener("DOMContentLoaded", function() {
   // Get all menu items that have children
   var menuItems = document.querySelectorAll('.menu-item-has-children');
@@ -74,7 +67,7 @@ document.addEventListener("DOMContentLoaded", function() {
       
       // Get the icon within the menu item with a delay of 300ms
       setTimeout(function() {
-        var menuItemIcon = document.querySelector('.menu-item-has-children>a>svg');
+        var menuItemIcons = document.querySelectorAll('.menu-item-has-children>a>svg');
 
         // Add click event to the menu item link
         menuItemLink.addEventListener('click', function(event) {
@@ -88,7 +81,8 @@ document.addEventListener("DOMContentLoaded", function() {
             subMenu.style.display = (subMenu.style.display === 'block') ? 'none' : 'block';
             
             // Add this css to the icon   transform: rotate(180deg); 
-            menuItemIcon.classList.toggle('rotate-icon');
+            
+            menuItemIcons.forEach(icon => icon.classList.toggle('rotate-icon'));
             
             // Prevent this event from bubbling up to the li
             event.stopPropagation();
