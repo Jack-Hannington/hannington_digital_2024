@@ -11,13 +11,13 @@ Text Domain: altius_healthcare
 */
 
 :root {
-    --bg-color: #F6F5F5;
-    --body-text-color: #051F29;
-    --altius-dark-grey: #414548;
-    --altius-light-grey: #ededed;
-    --body-font-size: 1rem;
-    --altius-blue: #1DC0C9;
-    --animate-duration: 300ms;
+  --bg-color: #F6F5F5;
+  --body-text-color: #051F29;
+  --altius-dark-grey: #414548;
+  --altius-light-grey: #ededed;
+  --body-font-size: 1rem;
+  --altius-blue: #1DC0C9;
+  --animate-duration: 300ms;
 }
 
 * {
@@ -28,92 +28,94 @@ Text Domain: altius_healthcare
 
 
 @font-face {
-    font-family: 'Inter';
-    src: url('assets/fonts/inter/Inter-VariableFont_slnt,wght.ttf') format('truetype');
-    font-weight: 100 900;
-    font-style: oblique 0deg 10deg;
-    font-display: swap;
+  font-family: 'Inter';
+  src: url('assets/fonts/inter/Inter-VariableFont_slnt,wght.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: oblique 0deg 10deg;
+  font-display: swap;
 }
 
 @font-face {
-    font-family: 'Manrope';
-    src: url('assets/fonts/manrope/Manrope-VariableFont_wght.ttf') format('truetype');
-    font-weight: 100 900;
-    font-style: oblique 0deg 10deg;
-    font-display: swap;
+  font-family: 'Manrope';
+  src: url('assets/fonts/manrope/Manrope-VariableFont_wght.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: oblique 0deg 10deg;
+  font-display: swap;
 }
 
 html {
-  height:100%; 
+  height: 100%;
   scroll-behavior: smooth;
 }
 
 body {
-    font-family: 'Inter', sans-serif;
-    font-weight: 400;
-    font-size: 1rem;
-    color: #212529;
-    text-align: left;
-    line-height: 1.6;
-    background-color: var(--bg-color);
-    height:100%;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+  color: #212529;
+  text-align: left;
+  line-height: 1.6;
+  background-color: var(--bg-color);
+  height: 100%;
 }
 
 
 /*---- NAV ----*/
 
 nav {
-  width:100%;
-  margin:0;
-  position:fixed;
+  width: 100%;
+  margin: 0;
+  position: fixed;
   background-color: var(--altius-dark-grey);
-  top:0;
+  top: 0;
   box-shadow: 0px 3px 7px 3px rgb(0 0 0 / 23%);
 }
 
 .navbar {
-  transition:0.3s;
-  z-index:1;
+  transition: 0.3s;
+  z-index: 1;
   display: flex;
   background-color: var(--altius-dark-grey);
-  width:100%; 
-  justify-content:space-between;
-  padding:10px 15px;
-  color:var(--altius-light-grey)
+  width: 100%;
+  justify-content: space-between;
+  padding: 10px 15px;
+  color: var(--altius-light-grey)
 }
 
 .navbar-light {
   background-color: var(--altius-light-grey);
-  color:var(--altius-dark-grey)
+  color: var(--altius-dark-grey)
 }
 
-.mobile-menu-logo, .logo > a > img {
-  width:60px!important;
-  height:auto!important;
+.custom-logo {
+  width: 70px;
+  height: auto;
+  transition: 0.3s ease-in;
 }
 
 .menu-container {
   position: fixed;
-  top:0;
+  top: 0;
   background-color: var(--altius-dark-grey);
   width: calc(100%);
   height: 100vh;
-  left:0px;
-  display:none;
+  left: 0px;
+  display: none;
   box-sizing: border-box;
   overflow-y: auto;
 }
 
-.nav-item > button{
+.nav-item>button {
   font-size: 14px;
   border: 1px solid var(--altius-blue);
 }
 
-.nav-item{
-  flex:1;
+.nav-item {
+  flex: 1;
 }
 
-#nav-toggle, .close-menu {
+#nav-toggle,
+.close-menu {
   text-align: right;
 }
 
@@ -136,6 +138,7 @@ nav {
   height: 2px;
   background-color: var(--altius-blue);
 }
+
 .close-menu span {
   font-size: 20px;
 }
@@ -144,19 +147,20 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding:15px;
-  border-bottom:1px solid #626262;
+  padding: 15px;
+  border-bottom: 1px solid #626262;
 }
 
-.menu, .sub-menu {
-  list-style-type:none;
-  padding-inline-start:0;
+.menu,
+.sub-menu {
+  list-style-type: none;
+  padding-inline-start: 0;
   margin-block-start: 0;
   margin-block-end: 0;
 }
 
 .menu li {
-  border-bottom:1px solid #626262;
+  border-bottom: 1px solid #626262;
 }
 
 .menu li a {
@@ -172,10 +176,27 @@ nav {
 .menu-cta {
   display: none;
 }
+
 .menu-footer {
-  margin:15px;
+  margin: 15px;
   background-color: var(--altius-light-grey);
 }
+
+.menu-item-has-children>a>svg {
+  margin-left: 5px;
+  display: inline-block;
+  /* Required for transform */
+  transition: transform 0.3s ease;
+  /* Animate the transform */
+  float: right;
+}
+
+.rotate-icon {
+  transform: rotate(180deg);
+}
+
+
+
 
 /* Hide sub-menu by default */
 .sub-menu {
@@ -183,25 +204,25 @@ nav {
   visibility: hidden;
   transition: all 0.5s ease;
   display: none;
+  flex-direction: column;
 }
-
 /* Show sub-menu on hover */
 .menu-item-has-children:hover .sub-menu {
   opacity: 1;
   visibility: visible;
+  display: flex;
+  flex-direction: column;
 }
 
-/* Class to show sub-menu */
-/* .visible {
-  opacity: 1 !important;
-  visibility: visible !important;
-} */
+.sub-menu > li {
+  border-bottom: none;
+}
 
 
 /* remove this */
 
-#menu-clinics li a{
-  color:var(--body-text-color)!important;
+#menu-clinics li a {
+  color: var(--body-text-color) !important;
 }
 
 .show {
@@ -209,50 +230,80 @@ nav {
   flex-direction: column;
 }
 
-@media (min-width:1000px){
+@media (min-width:1000px) {
   .navbar {
-    align-items:center;
+    align-items: center;
   }
+
   .nav-item {
-    display:flex;
-    flex:1;
+    display: flex;
+    flex: 1;
   }
+
   .menu-cta {
-    text-align:right;
+    text-align: right;
     display: inline-block;
   }
+
   .menu-container {
-    display:flex;
-    position:relative;
-    border:none;
-    height:auto;
-    flex:8;
-    padding:0;
+    display: flex;
+    position: relative;
+    border: none;
+    height: auto;
+    flex: 8;
+    padding: 0;
   }
+
   .menu-body {
-    width:100%;
+    width: 100%;
   }
+
   .menu-body ul {
-    display:flex;
-    flex-direction:row;
-    justify-content:space-between;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
     background: var(--altius-dark-grey);
     white-space: nowrap;
     font-size: 0.9rem;
     font-weight: 300;
   }
-  .menu-body li {
-    border-bottom:none;
-  }
-  .menu li a {
-    color:#F6F5F5;
-  }
-    .menu-toggle, #closeMenu, .mobile-menu-logo, .menu-header, .menu-number, .menu-footer {
-    display:none;
-  }
-  .menu-item-has-children > .sub-menu {
-      position: fixed;
 
+  .menu-body li {
+    border-bottom: none;
+  }
+
+  .menu li a {
+    color: #F6F5F5;
+  }
+
+  .menu-toggle,
+  #closeMenu,
+  .mobile-menu-logo,
+  .menu-header,
+  .menu-number,
+  .menu-footer {
+    display: none;
+  }
+
+  .menu-item-has-children>.sub-menu {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .menu-item-has-children>a>svg {
+    float: none;
+  }
+
+  /* Show sub-menu on hover */
+  .menu-item-has-children:hover .sub-menu {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  /* Rotate the chevron when the menu item is hovered */
+  .menu-item-has-children:hover>a>svg {
+    transform: rotate(180deg);
   }
 }
 
@@ -269,14 +320,14 @@ nav {
 
 /* Logged-in User Admin Menu Menu */
 
-.admin-margin{
+.admin-margin {
   top: 32px;
 }
 
 @media screen and (max-width: 782px) {
-    .admin-bar {
-        top: 46px;
-    }
+  .admin-margin {
+    top: 46px;
+  }
 }
 
 
@@ -285,16 +336,16 @@ nav {
 /* Center default container */
 
 .container {
-    margin: auto;
+  margin: auto;
 }
 
 .container-fluid {
-  margin-top:120px;
+  margin-top: 120px;
 }
 
 /* Limit written content to 650px wide - useful for long text headings */
 .max-650 {
-    max-width: 650px;
+  max-width: 650px;
 }
 
 /*--- HEADINGS ----*/
@@ -305,44 +356,45 @@ h3,
 h4,
 h5,
 h6 {
-    font-family: 'Manrope', 'Inter', sans-serif;
-    font-weight: 700;
+  font-family: 'Manrope', 'Inter', sans-serif;
+  font-weight: 700;
 }
 
 /* Text preceding a section's heading */
 
 .brow-text {
-    color: var(--altius-blue);
-    margin-bottom: 5px;
+  color: var(--altius-blue);
+  margin-bottom: 5px;
 }
 
 
 /* Override Wordpress defaults */
 
-.wp-block-button__link, button {
-    border-radius: 4px;
-    background-color: #F6F5F5;
-    color: #051F29;
-    padding: 6px 20px;
-    border:none;
-    font-size: var(--body-font-size);
+.wp-block-button__link,
+button {
+  border-radius: 4px;
+  background-color: #F6F5F5;
+  color: #051F29;
+  padding: 6px 20px;
+  border: none;
+  font-size: var(--body-font-size);
 }
 
 .wp-block-button.altius-btn__primary .wp-block-button__link {
-    background-color: var(--altius-blue);
-    color: #F6F5F5;
+  background-color: var(--altius-blue);
+  color: #F6F5F5;
 }
 
 .wp-block-button.altius-btn__secondary .wp-block-button__link {
-    background-color: #F6F5F5;
-    color: var(--altius-blue);
+  background-color: #F6F5F5;
+  color: var(--altius-blue);
 }
 
 /* Buttons and links */
 
 .altius-btn__primary {
-    background-color: var(--altius-blue);
-    color: #F6F5F5;
+  background-color: var(--altius-blue);
+  color: #F6F5F5;
 }
 
 /* Images */
@@ -354,9 +406,8 @@ img {
 /* Media queries */
 
 @media (min-width : 1200px) {
-    h1 {
-        font-size: 50px;
-        line-height: 60px;
-    }
+  h1 {
+    font-size: 50px;
+    line-height: 60px;
+  }
 }
-

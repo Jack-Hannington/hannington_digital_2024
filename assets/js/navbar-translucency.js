@@ -1,13 +1,14 @@
-// jQuery(document).ready(function($) {
-//     $(window).scroll(function() {
-//         var scrollTop = $(this).scrollTop();
-//         if (scrollTop < 50) {
-//             $('.navbar').css('background-color', 'rgba(69, 73, 80, 1)');
-//         } else {
-//             $('.navbar').css('background-color', 'rgba(69, 73, 80, 0.7)');
-//         }
-//     });
-// });
+jQuery(document).ready(function($) {
+    $(window).scroll(function() {
+        var scrollTop = $(this).scrollTop();
+        if (scrollTop < 50) {
+          $('.custom-logo').css('width', '60px');
+          
+        } else {
+          $('.custom-logo').css('width', '50px');
+        }
+    });
+});
 
 // Toggle menu
 
@@ -19,7 +20,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
   if (document.querySelector("#wpadminbar")) {
   console.log('admin bar is shown');
   document.querySelector('nav').classList.add('admin-margin');
-  document.querySelector('.menu-container').classList.add('admin-margin');
+  // document.querySelector('.menu-container').classList.add('admin-margin');
 }});
 
 
@@ -46,6 +47,7 @@ const checkViewportWidth = () => {
     } else {
         // If viewport is less than 1000px wide, add the class
         menu.classList.add('animate__slideOutRight');
+        menu.classList.add('admin-margin');
     }
 };
 
@@ -56,41 +58,45 @@ checkViewportWidth();
 mediaQueryList.addEventListener('change', checkViewportWidth);
 
 
-// Show navbar on scroll-up
-// var lastScrollTop = 0;
-// var navbar = document.querySelector(".navbar");
-// window.addEventListener("scroll", function() {
-//     var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-//     if (scrollTop > lastScrollTop && scrollTop > 0) {
-//         // Downscroll and not at the top of the page, hide navbar
-//         navbar.style.top = "-76px"; // Adjust this value to match the height of the navbar
-//     } else {
-//         // Upscroll or at the top of the page, show navbar
-//         navbar.style.top = "46px";
-//     }
-//     lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // For negative scrolling
-// });
 
 
 
-  
   
 document.addEventListener("DOMContentLoaded", function() {
   // Get all menu items that have children
   var menuItems = document.querySelectorAll('.menu-item-has-children');
 
-  // Add click event to each of them
+  // Add Iconify icon to each of them
   menuItems.forEach(function(menuItem) {
-      menuItem.addEventListener('click', function(event) {
-          // Prevent the page from navigating to the link on click
-          event.preventDefault();
+      var menuItemLink = menuItem.querySelector('a');
+      menuItemLink.insertAdjacentHTML('beforeend', '<span class="iconify" data-icon="tabler:chevron-down"></span>');
+      
+      // Get the icon within the menu item with a delay of 300ms
+      setTimeout(function() {
+        var menuItemIcon = document.querySelector('.menu-item-has-children>a>svg');
 
-          // Get the sub-menu of the clicked menu item
-          var subMenu = this.querySelector('.sub-menu');
+        // Add click event to the menu item link
+        menuItemLink.addEventListener('click', function(event) {
+            // Prevent the page from navigating to the link on click
+            event.preventDefault();
 
-          // Toggle the class for the sub-menu
-          subMenu.classList.toggle('visible');
-          subMenu.classList.toggle('animate__fadeInDown');
-      });
+            // Get the sub-menu of the clicked menu item
+            var subMenu = menuItem.querySelector('.sub-menu');
+
+            // Toggle the display of the sub-menu
+            subMenu.style.display = (subMenu.style.display === 'block') ? 'none' : 'block';
+            
+            // Add this css to the icon   transform: rotate(180deg); 
+            menuItemIcon.classList.toggle('rotate-icon');
+            
+            // Prevent this event from bubbling up to the li
+            event.stopPropagation();
+        });
+      }, 300); // Delay of 300ms
   });
 });
+
+
+
+
+
