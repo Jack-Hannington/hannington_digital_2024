@@ -66,16 +66,22 @@ nav {
   width: 100%;
   margin: 0;
   position: fixed;
-  background-color: var(--altius-dark-grey);
+  background-color: rgba(32, 33, 34, 0.86);
+  transition: 0.3s ease-in;
   top: 0;
   box-shadow: 0px 3px 7px 3px rgb(0 0 0 / 23%);
+}
+
+.translucent-bg {
+  backdrop-filter: blur(10px);
+  background-color: rgba(32, 33, 34, 0.86);
+  transition: background-color 0.3s ease;
 }
 
 .navbar {
   transition: 0.3s;
   z-index: 1;
   display: flex;
-  background-color: var(--altius-dark-grey);
   width: 100%;
   justify-content: space-between;
   padding: 10px 15px;
@@ -96,7 +102,7 @@ nav {
 .menu-container {
   position: fixed;
   top: 0;
-  background-color: var(--altius-dark-grey);
+  background-color: #3f3f40;
   width: calc(100%);
   height: 100vh;
   left: 0px;
@@ -171,6 +177,11 @@ nav {
   height: 100%;
   display: block;
   font-weight: 300;
+  transition: 0.3s ease-in;
+}
+
+.menu li a:hover {
+  color:var(--altius-blue);
 }
 
 .menu-cta {
@@ -195,7 +206,17 @@ nav {
   transform: rotate(180deg);
 }
 
-
+/* Alert bar */
+.alert-bar {
+  background-color: var(--altius-blue);
+  position: absolute;
+  left: 0;
+  z-index: -1;
+  text-align: center;
+  width: 100%;
+  top:90px;
+  padding:6px;
+}
 
 
 /* Hide sub-menu by default */
@@ -252,6 +273,7 @@ nav {
     height: auto;
     flex: 8;
     padding: 0;
+    background-color: inherit;
   }
 
   .menu-body {
@@ -262,7 +284,6 @@ nav {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    background: var(--altius-dark-grey);
     white-space: nowrap;
     font-size: 0.9rem;
     font-weight: 300;
@@ -274,6 +295,7 @@ nav {
 
   .menu li a {
     color: #F6F5F5;
+    padding:10px 15px;
   }
 
   .menu-toggle,
@@ -295,6 +317,10 @@ nav {
     float: none;
   }
 
+  .sub-menu {
+    background-color: rgb(33 33 34 / 86%);
+  }
+
   /* Show sub-menu on hover */
   .menu-item-has-children:hover .sub-menu {
     opacity: 1;
@@ -307,14 +333,6 @@ nav {
   }
 }
 
-
-/* Add the translucent effect */
-
-/* .navbar {
-    backdrop-filter: blur(10px);
-    background-color: rgba(69, 73, 80, 0.5);
-    transition: background-color 0.3s ease;
-} */
 
 
 
@@ -340,7 +358,7 @@ nav {
 }
 
 .container-fluid {
-  margin-top: 120px;
+  margin-top: 140px;
 }
 
 /* Limit written content to 650px wide - useful for long text headings */
@@ -411,3 +429,4 @@ img {
     line-height: 60px;
   }
 }
+

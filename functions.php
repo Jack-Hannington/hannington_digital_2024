@@ -86,3 +86,76 @@ function altius_healthcare_scripts()
 add_action("wp_enqueue_scripts", "altius_healthcare_scripts");
 
 
+// Add an alert bar to the customiser
+
+function altius_healthcare_customizer( $wp_customize ) {
+
+    // Register the section
+    $wp_customize->add_section(
+      'altius_healthcare_alert_bar',
+      array(
+        'title' => __( 'Alert Bar', 'altius_healthcare' ),
+        'priority' => 30,
+      )
+    );
+  
+    // Add a new setting
+    $wp_customize->add_setting(
+      'altius_healthcare_alert_bar_text',
+      array(
+        'default' => '',
+        'type' => 'theme_mod',
+        'capability' => 'edit_theme_options',
+        'transport' => 'refresh',
+      )
+    );
+  
+    // Add a new control
+    $wp_customize->add_control(
+      new WP_Customize_Control(
+        $wp_customize,
+        'altius_healthcare_alert_bar_text_control',
+        array(
+          'label' => __( 'Alert Bar Text', 'altius_healthcare' ),
+          'section' => 'altius_healthcare_alert_bar',
+          'settings' => 'altius_healthcare_alert_bar_text',
+        )
+      )
+    );
+  
+    // Add a new setting
+    $wp_customize->add_setting(
+      'altius_healthcare_alert_bar_visible',
+      array(
+        'default' => false,
+        'type' => 'theme_mod',
+        'capability' => 'edit_theme_options',
+        'transport' => 'refresh',
+      )
+    );
+  
+    // Add a new control
+    $wp_customize->add_control(
+      new WP_Customize_Control(
+        $wp_customize,
+        'altius_healthcare_alert_bar_visible_control',
+        array(
+          'label' => __( 'Alert Bar Visible', 'altius_healthcare' ),
+          'section' => 'altius_healthcare_alert_bar',
+          'settings' => 'altius_healthcare_alert_bar_visible',
+          'type' => 'checkbox',
+        )
+      )
+    );
+  }
+  add_action( 'customize_register', 'altius_healthcare_customizer' );
+  
+  // Make sure the alert bar is visible even if the nav is fixed and 60px tall
+  add_action( 'wp_footer', function() {
+    if( get_theme_mod( 'altius_healthcare_alert_bar_visible' ) ) {
+      echo '<div class="alert-bar">';
+      echo get_theme_mod( 'altius_healthcare_alert_bar_text' );
+      echo '</div>';
+    }
+  });
+  

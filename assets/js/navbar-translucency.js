@@ -1,11 +1,11 @@
 jQuery(document).ready(function($) {
     $(window).scroll(function() {
         var scrollTop = $(this).scrollTop();
-        if (scrollTop < 50) {
-          $('.custom-logo').css('width', '60px');
-          
+        if (scrollTop > 20) {
+          //add translucent class to nav
+          $('nav').addClass('translucent-bg ');
         } else {
-          $('.custom-logo').css('width', '50px');
+          $('nav').removeClass('translucent-bg');
         }
     });
 });
@@ -20,6 +20,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
   if (document.querySelector("#wpadminbar")) {
   console.log('admin bar is shown');
   document.querySelector('nav').classList.add('admin-margin');
+  document.querySelector('.alert-bar').classList.add('admin-margin');
   // document.querySelector('.menu-container').classList.add('admin-margin');
 }});
 
@@ -43,11 +44,11 @@ const checkViewportWidth = () => {
     if (mediaQueryList.matches) {
         // If viewport is 1000px or wider, remove the class
         menu.classList.remove('animate__slideOutRight');
-        menu.classList.remove('admin-margin');
+        // menu.classList.remove('admin-margin');
     } else {
         // If viewport is less than 1000px wide, add the class
         menu.classList.add('animate__slideOutRight');
-        menu.classList.add('admin-margin');
+        // menu.classList.add('admin-margin');
     }
 };
 
