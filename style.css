@@ -72,6 +72,7 @@ nav {
   transition: 0.3s ease-in;
   top: 0;
   box-shadow: 0px 3px 7px 3px rgb(0 0 0 / 23%);
+  z-index: 1000;
 }
 
 /* .translucent-bg {
@@ -221,6 +222,12 @@ nav {
   padding:6px;
 }
 
+.alert-bar a {
+  color: var(--altius-light-grey);
+  text-decoration: none;
+  font-size: 14px;
+}
+
 
 /* Hide sub-menu by default */
 .sub-menu {
@@ -358,10 +365,18 @@ nav {
 
 .container {
   margin: auto;
+  max-width: 1200px;
 }
 
 .container-fluid {
-  margin-top: 140px;
+  margin-top: 117px;
+  padding-left:0px;
+  padding-right:0px;
+}
+
+/* Default gap between column container */
+:where(.wp-block-columns.is-layout-flex) {
+  gap: 4em;
 }
 
 /* Limit written content to 650px wide - useful for long text headings */
@@ -378,7 +393,15 @@ h4,
 h5,
 h6 {
   font-family: 'Manrope', 'Inter', sans-serif;
-  font-weight: 700;
+  font-weight: 800;
+}
+.wp-block-heading {
+  max-width: 700px;
+}
+
+h1 {
+  font-size: 40px;
+  line-height: 50px;
 }
 
 /* Text preceding a section's heading */
@@ -391,19 +414,35 @@ h6 {
 
 /* Override Wordpress defaults */
 
-.wp-block-button__link,
-button {
-  border-radius: 4px;
-  background-color: #F6F5F5;
-  color: #051F29;
-  padding: 6px 20px;
-  border: none;
-  font-size: var(--body-font-size);
+
+/* Covers */
+
+.wp-block-cover {
+  padding:0px;
 }
 
+/* Buttons and links */
+
+.wp-block-button__link, .wp-element-button
+button {
+  border-radius: 4px;
+  background-color: var(--altius-blue);
+  color: #F6F5F5;
+  padding: 6px 20px;
+  font-size: var(--body-font-size);
+  border:1px solid transparent;
+}
+
+.wp-block-button .wp-block-button__link.is-style-outline, .wp-block-button.is-style-outline>.wp-block-button__link {
+  padding: 6px 20px;
+  font-size: var(--body-font-size);
+  background-color: #F6F5F5;
+  border:1px solid var(--altius-dark-grey)
+}
 .wp-block-button.altius-btn__primary .wp-block-button__link {
   background-color: var(--altius-blue);
   color: #F6F5F5;
+  border-radius: 4px;
 }
 
 .wp-block-button.altius-btn__secondary .wp-block-button__link {
@@ -416,6 +455,32 @@ button {
 .altius-btn__primary {
   background-color: var(--altius-blue);
   color: #F6F5F5;
+  border-radius: 4px;
+}
+
+.altius-btn__secondary {
+  background-color: var(--altius-light-grey);
+  border-radius: 4px;
+}
+
+.carousel-button {
+  border:none;
+  padding:10px 0px;
+  background-color: transparent;
+}
+
+@media (max-width: 782px) {
+  .carousel-button {
+    font-size: 0.9rem;
+  }
+}
+
+.carousel-button .active {
+  color: var(--altius-blue);
+}
+
+.carousel-nav .active {
+  color: var(--altius-blue);
 }
 
 /* Images */
@@ -424,7 +489,49 @@ img {
   max-width: 100%;
 }
 
+figure {
+  margin: 0 0 0.5rem;
+}
+
+/* Cards */
+
+.card {
+  border-radius: 4px;
+  padding:14px;
+  transition:0.3s ease-in; 
+  min-width: 250px;
+  font-size: 0.9rem;
+}
+
+@media screen and (max-width:550px){
+  .card {
+    max-width: 190px;
+    font-size: 0.8rem;
+    min-width: auto;
+  }
+  .wp-block-columns {
+    justify-content: space-between;
+    gap:10px!important;
+  }
+}
+@media screen and (max-width:400px){
+  .card {
+    max-width: 100%;
+  }
+  .wp-block-columns {
+    justify-content: space-between;
+  }
+}
+
+.card:hover {
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+  border:1px solid var(--altius-blue);
+  cursor:pointer;
+}
+
+
 /* Media queries */
+
 
 @media (min-width : 1200px) {
   h1 {

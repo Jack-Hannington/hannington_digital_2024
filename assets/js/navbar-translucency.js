@@ -93,5 +93,11 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 
-
-
+// Add active class to Altius clinics slider
+jQuery(document).ready(function($) {
+  $('#altiusClinics').on('slide.bs.carousel', function (e) {
+    var index = $(e.relatedTarget).index();
+    $('.carousel-button').removeClass('active');
+    $('.carousel-button[data-bs-slide-to="' + index + '"]').addClass('active');
+  });
+});
