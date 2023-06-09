@@ -379,6 +379,29 @@ nav {
   gap: 4em;
 }
 
+/* Mountain background */
+
+.mountain-bg {
+  background-image: url('http://altius-healthcare.local/wp-content/uploads/2023/06/Mountain_bg_left_crop.png');
+  background-repeat: no-repeat;
+  background-position: left;
+  background-size:contain;
+}
+.mountain-bg-left {
+  background-position: left;
+}
+
+@media (max-width: 650px) {
+  .mountain-bg {
+    background-size: contain;
+  }
+  .mountain-bg-left {
+    background-position: left;
+  }
+}
+
+
+
 /* Limit written content to 650px wide - useful for long text headings */
 .max-650 {
   max-width: 650px;
@@ -393,7 +416,7 @@ h4,
 h5,
 h6 {
   font-family: 'Manrope', 'Inter', sans-serif;
-  font-weight: 800;
+  font-weight: 700;
 }
 .wp-block-heading {
   max-width: 700px;
@@ -407,7 +430,7 @@ h1 {
 /* Text preceding a section's heading */
 
 .brow-text {
-  color: var(--altius-blue);
+  color: var(--altius-blue)!important;
   margin-bottom: 5px;
 }
 
@@ -437,7 +460,8 @@ button {
   padding: 6px 20px;
   font-size: var(--body-font-size);
   background-color: #F6F5F5;
-  border:1px solid var(--altius-dark-grey)
+  border:1px solid var(--altius-light-grey);
+  box-shadow: inset 0 0 2px #c0b9b9;
 }
 .wp-block-button.altius-btn__primary .wp-block-button__link {
   background-color: var(--altius-blue);
@@ -447,7 +471,7 @@ button {
 
 .wp-block-button.altius-btn__secondary .wp-block-button__link {
   background-color: #F6F5F5;
-  color: var(--altius-blue);
+  color:#051F29;
 }
 
 /* Buttons and links */
@@ -503,6 +527,11 @@ figure {
   font-size: 0.9rem;
 }
 
+.card a {
+  text-decoration: none;
+  color:inherit;
+}
+
 @media screen and (max-width:550px){
   .card {
     max-width: 190px;
@@ -540,3 +569,19 @@ figure {
   }
 }
 
+
+
+/* Forms */
+
+label {
+  margin-bottom:4px;
+}
+
+input, textarea {
+  font-family: inherit;
+  padding:10px;
+  border-radius:4px;
+  border:1px solid var(--altius-light-grey);
+  width:100%;
+  margin-bottom:10px;
+}

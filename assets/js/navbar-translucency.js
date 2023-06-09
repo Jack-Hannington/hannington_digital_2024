@@ -101,3 +101,25 @@ jQuery(document).ready(function($) {
     $('.carousel-button[data-bs-slide-to="' + index + '"]').addClass('active');
   });
 });
+
+
+// Convert classes to data-aos animations 
+window.addEventListener('DOMContentLoaded', (event) => {
+  console.log('DOM fully loaded and parsed');
+  const blocks = document.querySelectorAll('.wp-block-group');
+   
+  blocks.forEach((block) => {
+    console.log(block);
+      block.classList.forEach((className) => {
+          if (className.startsWith('aos-')) {
+              const animationName = className.split('aos-')[1];
+              block.dataset.aos = animationName;
+              block.classList.remove(className);
+          }
+      });
+  });
+
+  AOS.init({
+      once: false,
+  });
+});

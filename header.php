@@ -64,15 +64,10 @@
         )); ?>
       </div>
       <div class="menu-footer">
-      <?php wp_nav_menu(array(
-            'theme_location' => 'clinic-menu',
-            'menu_class' => 'menu',
-            'fallback_cb' => false
-        )); ?>
       </div>
     </div>
     <div id="nav-cta" class="nav-item menu-cta ">
-      <button class="altius-btn__primary">
+      <button class="altius-btn__primary wp-block-button__link ">
         Book
       </button>
     </div>
