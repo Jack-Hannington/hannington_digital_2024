@@ -61,6 +61,12 @@ body {
   height: 100%;
 }
 
+/*---- Colours ----*/
+.altius-blue-bg {
+  background-color:var(--altius-blue);
+  color: var(--altius-light-grey);
+}
+
 
 /*---- NAV ----*/
 
@@ -384,7 +390,6 @@ nav {
 .mountain-bg {
   background-image: url('http://altius-healthcare.local/wp-content/uploads/2023/06/Mountain_bg_left_crop.png');
   background-repeat: no-repeat;
-  background-position: left;
   background-size:contain;
 }
 .mountain-bg-left {
@@ -393,7 +398,7 @@ nav {
 
 @media (max-width: 650px) {
   .mountain-bg {
-    background-size: contain;
+    background-size: cover;
   }
   .mountain-bg-left {
     background-position: left;
@@ -584,4 +589,103 @@ input, textarea {
   border:1px solid var(--altius-light-grey);
   width:100%;
   margin-bottom:10px;
+}
+
+/* Features bar */
+.features-bar {
+  width:100%;
+  flex-wrap:wrap;
+  display:flex;
+}
+
+.feature {
+  display:inline-flex;
+  align-items:center;
+  border-right:1px solid white;
+  flex:1;
+  justify-content:center;
+  font-family:'Manrope', 'Inter', 'Sans-serif';
+}
+
+.feature:nth-last-of-type(1) {
+  border:none;
+}
+
+.feature-count {
+  font-size:2.4rem;
+  font-weight: 600;
+}
+
+.feature-caption {
+  margin-left:10px;
+  font-size:0.9rem;
+  line-height: 0.9rem;
+}
+
+@media only screen and (max-width: 700px) {
+  .feature {
+    padding:10px;
+    min-width:40%;
+    border:none;
+    justify-content: center;
+  }
+}
+
+@media only screen and (max-width: 300px) {
+  .feature {
+    padding:10px;
+    min-width:100%;
+    border:none;
+  }
+}
+
+
+/* Autoscrolling slider */
+.logo-slider {
+  --image-size: 300px;
+  padding: 20px;
+  overflow: hidden;
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+  display: flex;
+}
+.logo-slider:hover div {
+  animation-play-state: paused;
+}
+.logo-slider div {
+  display: flex;
+  position: relative;
+  animation: marquee 20s linear infinite;
+  justify-content: space-around;
+}
+.logo-slider img {
+  display: block;
+  min-width: var(--image-size);
+  height: auto;
+  margin: 0 1vw;
+}
+.logo-slider:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background: linear-gradient(to right, white, rgba(255, 255, 255, 0) 80px, rgba(255, 255, 255, 0) calc(100% - 80px), white);
+}
+@media (max-width: 900px) {
+  logo-slider {
+    --image-size: 280px;
+    --image-size: min(max(50px, 10vw), 100px);
+  }
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
 }
