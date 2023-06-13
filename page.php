@@ -5,7 +5,7 @@ get_header();
 
 <?php
 /**
- * Template Name: Page
+ * Template Name: Altius page
  *
  * Displays a page with only the page title.
  */

@@ -55,6 +55,7 @@ function register_my_menus()
     register_nav_menus([
         "header-menu" => __("Header Menu"),
         "clinic-menu" => __("Clinic Menu"),
+        "services-menu" => __("Services Menu"),
     ]);
 }
 add_action("init", "register_my_menus");
