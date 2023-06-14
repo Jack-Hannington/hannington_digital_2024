@@ -123,3 +123,12 @@ window.addEventListener('DOMContentLoaded', (event) => {
       once: false,
   });
 });
+
+// Services menu 
+document.addEventListener("DOMContentLoaded", function() {
+  document.querySelector('#services-toggle').addEventListener('click', function() {
+    document.querySelector('.services-menu').classList.toggle('show');
+  }
+  );
+});
+

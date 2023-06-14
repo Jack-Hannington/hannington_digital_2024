@@ -10,8 +10,10 @@ get_header();
  * Displays a page with only the page title.
  */
 ?>
-<div class="row container py-5" style="height:2000px">
-<div class="service-menu-container row col-md-3 col-12">
+<div class="container py-5 menu-services-container">
+<button id="services-toggle" class="wp-block-button__link hwp-block-button__link.is-style-outline">See all services</button>
+<div class="row col-md-3 col-12">
+  
 <?php wp_nav_menu(array(
             'theme_location' => 'services-menu',
             'menu_class' => 'services-menu',

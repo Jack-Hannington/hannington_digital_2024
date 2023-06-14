@@ -238,19 +238,23 @@ nav {
 
 /* Services menu */
 
+#services-toggle {
+  display: none;
+}
+
 .menu-services-container {
   position:sticky;
   top:90px;
-  background-color: #fff;
-  padding:10px;
-  border-radius:4px;
-  border:0.5px solid var(--altius-blue);
-  max-height: 300px;
 }
 .services-menu {
   display: flex;
   flex-direction: column;
   padding-inline-start: 0;
+  background-color: #fff;
+  padding:10px;
+  border-radius:4px;
+  border:0.5px solid var(--altius-blue);
+  max-height: 300px;
 }
  
 .services-menu > li {
@@ -262,6 +266,18 @@ nav {
 
 .services-menu > li > a {
   text-decoration: none;
+}
+
+@media (max-width:1000px){
+  .services-menu{
+    display:none;
+  }
+  .services-menu-toggle{
+    display:block;
+  }
+  #services-toggle {
+    display: block;
+  }
 }
 
 
