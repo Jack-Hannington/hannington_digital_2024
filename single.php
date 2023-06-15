@@ -4,9 +4,9 @@ get_header();
 
 <?php
 /**
- * Template Name: Altius services page
+ * Template Name: Altius post page
  *
- * Displays a page with a sidebar menu to other services that toggles on mobile. 
+ * Displays a page with only the page title.
  */
 ?>
 <div class="container py-5 menu-services-container">

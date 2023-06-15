@@ -239,3 +239,7 @@ function enqueue_aos_library() {
     wp_enqueue_style( 'aos', 'https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.css', array(), '2.1.1', 'all' );
 }
 add_action( 'wp_enqueue_scripts', 'enqueue_aos_library' );
+
+
+//enable post template
+add_theme_support( 'post-thumbnails' );
