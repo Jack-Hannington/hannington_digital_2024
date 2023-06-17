@@ -1,6 +1,6 @@
 </div>
 <footer id="colophon" class="site-footer altius-dark-grey-bg ">
-        <div class="container-fluid">
+        <div class="container-fluid mountain-bg">
             <div class="container">
                 <!-- Footer content goes here -->
                 <div class="row py-5">
@@ -42,7 +42,7 @@
     </div>
     <div class="row border-top">
     <div class="col-12 container py-4">
-                        &copy <?php echo date('Y'); ?> Altius Healthcare
+                        &copy <?php echo date('Y'); ?> Altius Healthcare Limted. All rights reserved. The Old Barn, 30B Park Road, Hale Cheshire, WA15 9NN.
                     </div>
     </div>
         </div>
