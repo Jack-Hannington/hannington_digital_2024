@@ -29,8 +29,6 @@
     </div>
 
     <div id="nav-toggle" class="menu-toggle nav-item">
-      <!-- <button id="showMenu">Menu</button> -->
-      <!-- <button id="showMenu">&#9776;</button> -->
       <div id="showMenu" class="nav-toggle">
   <span></span>
   <span></span>
@@ -79,5 +77,4 @@
 
   </div>
   </header><!-- #masthead -->
-  <div class="container-fluid">
     <div id="content" class="site-content">

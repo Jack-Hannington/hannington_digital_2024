@@ -120,7 +120,8 @@ window.addEventListener('DOMContentLoaded', (event) => {
   });
 
   AOS.init({
-      once: false,
+      once: true,
+      duration: 700,
   });
 });
 

@@ -5,9 +5,9 @@ get_header();
 
 <?php
 /**
- * Template Name: Altius page
+ * Template Name: Altius full-width page
  *
- * Displays a page with only the page title.
+ * Displays a full-width page
  */
 ?>
 
@@ -16,7 +16,7 @@ get_header();
 $post = get_post();
 ?>
 
-<div class="container">   <?php the_content(); ?></div>
+<?php the_content(); ?>
 
 
 

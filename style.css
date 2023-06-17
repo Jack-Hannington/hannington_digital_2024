@@ -67,6 +67,11 @@ body {
   color: var(--altius-light-grey);
 }
 
+.altius-dark-grey-bg {
+  background-color:var(--altius-dark-grey);
+  color: var(--altius-light-grey);
+}
+
 
 /*---- NAV ----*/
 
@@ -242,19 +247,28 @@ nav {
   display: none;
 }
 
-.menu-services-container {
-  position:sticky;
-  top:90px;
-}
 .services-menu {
   display: flex;
   flex-direction: column;
   padding-inline-start: 0;
   background-color: #fff;
-  padding:10px;
+  padding:20px;
+  width:90%;
   border-radius:4px;
-  border:0.5px solid var(--altius-blue);
-  max-height: 300px;
+  border:0.5px solid #747474;
+  /* box-shadow: 0 0 4px 0 rgb(0 0 0 / 23%); */
+  position:sticky;
+  top:90px;
+}
+
+.services-menu .current-menu-item a {
+  color: var(--altius-blue); 
+  font-weight: 500;
+}
+
+
+.menu-services-container {
+  height:100%;
 }
  
 .services-menu > li {
@@ -262,10 +276,15 @@ nav {
   padding-inline-start: 0;
   margin-block-start: 0;
   margin-block-end: 0;
+  padding:4px 0px;
+  color:inherit!important;
 };
 
-.services-menu > li > a {
+.services-menu a {
   text-decoration: none;
+  color:#051F29;
+  width:100%;
+  padding: 10px 0px;
 }
 
 @media (max-width:1000px){
@@ -277,6 +296,9 @@ nav {
   }
   #services-toggle {
     display: block;
+  }
+  .menu-services-container {
+    height:auto;
   }
 }
 
@@ -299,13 +321,6 @@ nav {
 
 .sub-menu > li {
   border-bottom: none;
-}
-
-
-/* remove this */
-
-#menu-clinics li a {
-  color: var(--body-text-color) !important;
 }
 
 .show {
@@ -420,7 +435,7 @@ nav {
   max-width: 1200px;
 }
 
-.container-fluid {
+.site-content {
   margin-top: 117px;
   padding-left:0px;
   padding-right:0px;
@@ -436,10 +451,15 @@ nav {
 .mountain-bg {
   background-image: url('http://altius-healthcare.local/wp-content/uploads/2023/06/Mountain_bg_left_crop.png');
   background-repeat: no-repeat;
-  background-size:contain;
+  background-size:cover;
 }
-.mountain-bg-left {
-  background-position: left;
+
+
+.mountain-bg-right {
+  background-image: url('http://altius-healthcare.local/wp-content/uploads/2023/06/Mountain_bg_right_100.png');
+  background-repeat: no-repeat;
+  background-size:cover;
+  background-position: right;
 }
 
 @media (max-width: 650px) {
@@ -451,9 +471,11 @@ nav {
   }
 }
 
+/* Limit written content width  - useful for long text headings */
 
-
-/* Limit written content to 650px wide - useful for long text headings */
+.max-450 {
+  max-width: 450px;
+}
 .max-650 {
   max-width: 650px;
 }
@@ -478,12 +500,26 @@ h1 {
   line-height: 50px;
 }
 
+@media (min-width : 1200px) {
+  h1 {
+    font-size: 50px;
+    line-height: 60px;
+  }
+}
+
+
+/* Paragrahs, strong, a*/
+strong {
+  font-weight: 500;
+}
+
 /* Text preceding a section's heading */
 
 .brow-text {
   color: var(--altius-blue)!important;
   margin-bottom: 5px;
 }
+
 
 
 /* Override Wordpress defaults */
@@ -499,9 +535,15 @@ h1 {
 
 a {
   text-decoration: none;
+  color:inherit;
+  transition: all 0.3s ease;
 }
 
-.wp-block-button__link, .wp-element-button
+a:hover {
+  color:var(--altius-blue);
+}
+
+.wp-block-button__link, .wp-element-button,
 button {
   border-radius: 4px;
   background-color: var(--altius-blue);
@@ -516,7 +558,6 @@ button {
   font-size: var(--body-font-size);
   background-color: #F6F5F5;
   border:1px solid var(--altius-light-grey);
-  box-shadow: inset 0 0 2px #c0b9b9;
 }
 .wp-block-button.altius-btn__primary .wp-block-button__link {
   background-color: var(--altius-blue);
@@ -538,14 +579,17 @@ button {
 }
 
 .altius-btn__secondary {
-  background-color: var(--altius-light-grey);
+  background-color: #fff;
   border-radius: 4px;
+  color:#051F29;
+  border:1px solid var(--altius-light-grey);
 }
 
 .carousel-button {
   border:none;
   padding:10px 0px;
   background-color: transparent;
+  color:#919191;
 }
 
 @media (max-width: 782px) {
@@ -589,7 +633,7 @@ figure {
 
 @media screen and (max-width:550px){
   .card {
-    max-width: 190px;
+    max-width: 184px;
     font-size: 0.8rem;
     min-width: auto;
   }
@@ -612,19 +656,6 @@ figure {
   border:1px solid var(--altius-blue);
   cursor:pointer;
 }
-
-
-/* Media queries */
-
-
-@media (min-width : 1200px) {
-  h1 {
-    font-size: 50px;
-    line-height: 60px;
-  }
-}
-
-
 
 /* Forms */
 
@@ -651,10 +682,12 @@ input, textarea {
 .feature {
   display:inline-flex;
   align-items:center;
-  border-right:1px solid white;
   flex:1;
   justify-content:center;
   font-family:'Manrope', 'Inter', 'Sans-serif';
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
 }
 
 .feature:nth-last-of-type(1) {
@@ -669,7 +702,8 @@ input, textarea {
 .feature-caption {
   margin-left:10px;
   font-size:0.9rem;
-  line-height: 0.9rem;
+  line-height: 1rem;
+  font-weight: 500;
 }
 
 @media only screen and (max-width: 700px) {
@@ -677,7 +711,13 @@ input, textarea {
     padding:10px;
     min-width:40%;
     border:none;
-    justify-content: center;
+    display: flex;
+  }
+  .feature-caption {
+    font-size:0.8rem;
+  }
+  .feature-count {
+    font-size:1.8rem;
   }
 }
 
@@ -738,4 +778,68 @@ input, textarea {
   100% {
     transform: translateX(-100%);
   }
+}
+
+/* Recent posts */
+
+.recent-posts {
+  display: flex;
+  overflow:auto;
+  flex-wrap:nowrap;
+}
+
+@media only screen and (max-width: 700px) {
+  .recent-posts {
+    gap:0px;
+  }
+}
+
+.recent-post {
+  /* min-width: 250px; */
+  max-width: 85%;
+  display: flex;
+  flex-direction: column;
+}
+
+.recent-posts-title {
+  font-size:20px;
+}
+
+.post-image {
+  width: 100%;
+  height: 0; /* This is important, as it allows the padding-top to determine the height */
+}
+
+/* Content pages */
+
+.services-page h2 {
+  font-size:26px;
+  margin-top:30px;
+}
+
+ul {
+  list-style:none;
+  padding-inline-start:0;
+  padding-inline-end: 0;  
+  padding:0;
+  padding-left:0!important;
+  margin:0;
+}
+
+.footer-menu li {
+  list-style-type:none;
+  padding-inline-start:0;
+  padding-inline-end: 0;  
+  padding:0;
+  margin:0;
+  margin-bottom:1rem;
+}
+
+footer {
+  font-weight:200;
+}
+
+.footer-header {
+  font-weight:500;
+  color:white;
 }
