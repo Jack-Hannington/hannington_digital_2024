@@ -205,7 +205,10 @@ nav {
 
 .menu-footer {
   margin: 15px;
-  background-color: var(--altius-light-grey);
+}
+
+.menu-footer > .altius-btn__primary {
+  width: 100%;
 }
 
 .menu-item-has-children>a>svg {
@@ -328,6 +331,11 @@ nav {
   flex-direction: column;
 }
 
+.hide-sm {
+  display: none;
+}
+
+
 @media (min-width:1000px) {
   .navbar {
     align-items: center;
@@ -408,6 +416,9 @@ nav {
   .menu-item-has-children:hover>a>svg {
     transform: rotate(180deg);
   }
+  .hide-sm {
+    display: block;
+  }
 }
 
 
@@ -429,6 +440,11 @@ nav {
 /*---- LAYOUT ----*/
 
 /* Center default container */
+
+.header {
+  padding:40px 0px;
+  margin-bottom:40px;
+}
 
 .container {
   margin: auto;
@@ -456,7 +472,7 @@ nav {
 
 
 .mountain-bg-right {
-  background-image: url('http://altius-healthcare.local/wp-content/uploads/2023/06/Mountain_bg_right_100.png');
+  background-image: url('http://altius-healthcare.local/wp-content/uploads/2023/06/Mountain_bg_right_100-1.png');
   background-repeat: no-repeat;
   background-size:cover;
   background-position: right;
@@ -544,13 +560,14 @@ a:hover {
 }
 
 .wp-block-button__link, .wp-element-button,
-button {
+button, .btn {
   border-radius: 4px;
   background-color: var(--altius-blue);
   color: #F6F5F5;
   padding: 6px 20px;
   font-size: var(--body-font-size);
   border:1px solid transparent;
+  transition: 0.3s;
 }
 
 .wp-block-button .wp-block-button__link.is-style-outline, .wp-block-button.is-style-outline>.wp-block-button__link {
@@ -576,6 +593,15 @@ button {
   background-color: var(--altius-blue);
   color: #F6F5F5;
   border-radius: 4px;
+}
+
+.altius-btn__primary > a {
+  color:white;
+}
+
+.wp-block-button__link:hover {
+  color:white;
+  opacity: 0.7;
 }
 
 .altius-btn__secondary {
@@ -636,7 +662,7 @@ figure {
 }
 
 @media screen and (max-width:550px){
-  .card {
+  .wp-block-columns > .card {
     max-width: 184px;
     font-size: 0.8rem;
     min-width: auto;
@@ -766,7 +792,7 @@ input, textarea {
   height: 100%;
   left: 0;
   top: 0;
-  background: linear-gradient(to right, white, rgba(255, 255, 255, 0) 80px, rgba(255, 255, 255, 0) calc(100% - 80px), white);
+  background: linear-gradient(to right, white, rgba(255, 255, 255, 0) 30px, rgba(255, 255, 255, 0) calc(100% - 30px), white);
 }
 @media (max-width: 900px) {
   logo-slider {
@@ -821,14 +847,32 @@ input, textarea {
   margin-top:30px;
 }
 
+/* Blog - articles */
+
+.article-container {
+  max-width:800px;
+}
+
+.page-title {
+  background-size: cover;
+  background-position: center center;
+  color: white; 
+  padding: 80px 10px;
+  margin-bottom:20px;
+  margin-top:20px;
+}
+
+
 ul {
   list-style:none;
   padding-inline-start:0;
   padding-inline-end: 0;  
   padding:0;
-  padding-left:0!important;
+  padding-left:0;
   margin:0;
 }
+
+/* Footers */
 
 .footer-menu li {
   list-style-type:none;

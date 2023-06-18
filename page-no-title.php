@@ -2,30 +2,22 @@
 get_header();
 ?>
 
+
 <?php
 /**
- * Template Name: Altius services page
+ * Template Name: Page with no title
  *
- * Displays a page with a sidebar menu to other services that toggles on mobile. 
+ * Displays a page with no title for full flexibility
  */
 ?>
-<div class="services-page">
-<div class="container py-4 menu-services-container">
-  <div class="row">
-    <div class="col-lg-3 col-12 mb-2">
-      <button id="services-toggle" class="altius-btn__secondary w-100">Explore all services</button>
-      <?php wp_nav_menu(array(
-            'theme_location' => 'services-menu',
-            'menu_class' => 'services-menu',
-            'fallback_cb' => false
-        )); ?>
-    </div>
-    <div class="col-lg-9 col-12">
-      <?php the_content(); ?>
-    </div>
-  </div>
-  </div>
-  <div class="border-top py-5 mt-5">
+
+
+<?php
+$post = get_post();
+?>
+<div class="mountain-bg-right">
+<div class="container"><?php the_content(); ?></div>
+<div class="border-top py-5 mt-5">
     <div class="col-12 container">
       <h2 class="pb-3">Latest articles</h2>
       <?php
@@ -103,6 +95,9 @@ if( $recent_posts_query->have_posts() ) {
 </div>
 </div>
 </div>
+
+
+
 <?php
 get_footer();
 ?>
