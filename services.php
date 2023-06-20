@@ -25,7 +25,7 @@ get_header();
     </div>
   </div>
   </div>
-  <div class="border-top py-5 mt-5">
+  <div class="border-top border-bottom bg-white py-5 mt-5">
     <div class="col-12 container">
       <h2 class="pb-3">Latest articles</h2>
       <?php
@@ -40,7 +40,7 @@ $recent_posts_args = array(
 $recent_posts_query = new WP_Query( $recent_posts_args );
 
 if( $recent_posts_query->have_posts() ) {
-    echo '<div class="recent-posts row">';
+    echo '<div class="recent-posts row gap-3">';
     while( $recent_posts_query->have_posts() ) {
         $recent_posts_query->the_post();
         ?>

@@ -12,23 +12,25 @@ get_header();
 <div class="mountain-bg-right">
 <div class="article-container container">
   <div class="row">
-  <div class="col-12">
-  <?php if ( has_post_thumbnail() ) : ?>
-    <div class="page-title" style="background-image: url('<?php echo get_the_post_thumbnail_url(); ?>');">
-      <h1 class="mb-4"><?php the_title(); ?></h1>
+    <div class="col-12">
+    <h1 class="mb-4 mt-4"><?php the_title(); ?></h1>
+    <?php 
+      $author_id = get_post_field( 'post_author', get_the_ID() );
+      $author_name = get_the_author_meta( 'display_name', $author_id );
+      ?>
+      <div class="article-meta-info d-flex justify-content-between">
+      <span>Published by <?php echo $author_name; ?> </span><br/><span> <?php echo get_the_date('j F Y'); ?></span>
+      </div>
+      <?php if ( has_post_thumbnail() ) : ?>
+        <div class="page-title" style="background-image: url('<?php echo get_the_post_thumbnail_url(); ?>'); padding-bottom: 56.25%; background-size: cover; background-position: center;"></div>
+      <?php endif; ?>
+      <?php the_content(); ?>
     </div>
-  <?php else : ?>
-    <h1 class="mb-4"><?php the_title(); ?></h1>
-  <?php endif; ?>
-
-  <?php the_content(); ?>
-</div>
-
   </div>
+</div> 
 
-</div>
-<div class="border-top py-5 mt-5">
-    <div class="col-12 container article-container">
+<div class="border-top border-bottom bg-white py-5 mt-5">
+    <div class="col-12 container">
       <h2 class="pb-3">Latest articles</h2>
       <?php
 $current_page_title = strtolower(get_the_title()); // get the current page title and convert to lowercase
@@ -42,7 +44,7 @@ $recent_posts_args = array(
 $recent_posts_query = new WP_Query( $recent_posts_args );
 
 if( $recent_posts_query->have_posts() ) {
-    echo '<div class="recent-posts row">';
+    echo '<div class="recent-posts row gap-3">';
     while( $recent_posts_query->have_posts() ) {
         $recent_posts_query->the_post();
         ?>

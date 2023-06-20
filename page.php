@@ -33,7 +33,7 @@ $recent_posts_args = array(
 $recent_posts_query = new WP_Query( $recent_posts_args );
 
 if( $recent_posts_query->have_posts() ) {
-    echo '<div class="recent-posts row">';
+    echo '<div class="recent-posts row gap-4">';
     while( $recent_posts_query->have_posts() ) {
         $recent_posts_query->the_post();
         ?>

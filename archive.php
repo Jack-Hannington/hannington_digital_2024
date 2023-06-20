@@ -2,7 +2,6 @@
 
 <main class="container mt-4">
   <h1 class="mb-4"><?php the_archive_title(); ?></h1>
-
   <?php if ( have_posts() ) : ?>
     <div class="row">
       <?php while ( have_posts() ) : the_post(); ?>

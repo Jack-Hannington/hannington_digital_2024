@@ -240,6 +240,8 @@ function enqueue_aos_library() {
 }
 add_action( 'wp_enqueue_scripts', 'enqueue_aos_library' );
 
+add_theme_support( 'author' );
+
 
 //enable post template
 add_theme_support( 'post-thumbnails' );
