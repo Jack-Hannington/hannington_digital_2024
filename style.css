@@ -62,6 +62,10 @@ body {
 }
 
 /*---- Colours ----*/
+
+.altius-blue {
+  color:var(--altius-blue);
+}
 .altius-blue-bg {
   background-color:var(--altius-blue);
   color: var(--altius-light-grey);
@@ -239,7 +243,7 @@ nav {
 }
 
 .alert-bar a {
-  color: var(--altius-light-grey);
+  color: #ffffff;
   text-decoration: none;
   font-size: 14px;
 }
@@ -262,6 +266,13 @@ nav {
   /* box-shadow: 0 0 4px 0 rgb(0 0 0 / 23%); */
   position:sticky;
   top:90px;
+}
+
+@media (max-width:1000px){
+  .services-menu {
+    width: 100%;
+    border-color:#f9f9f9;
+  }
 }
 
 .services-menu .current-menu-item a {
@@ -480,14 +491,14 @@ nav {
 /* Mountain background */
 
 .mountain-bg {
-  background-image: url('http://altius-healthcare.local/wp-content/uploads/2023/06/Mountain_bg_left_crop.png');
+  background-image: url('https://www.altiushealthcare.co.uk/wp-content/uploads/2023/06/Mountain_bg_left_crop-1.png');
   background-repeat: no-repeat;
   background-size:cover;
 }
 
 
 .mountain-bg-right {
-  background-image: url('http://altius-healthcare.local/wp-content/uploads/2023/06/Mountain_bg_right_100-1.png');
+  background-image: url('https://www.altiushealthcare.co.uk/wp-content/uploads/2023/06/Mountain_bg_right_100-1.png');
   background-repeat: no-repeat;
   background-size:cover;
   background-position: right;
@@ -509,6 +520,10 @@ nav {
 }
 .max-650 {
   max-width: 650px;
+}
+
+.max-750 {
+  max-width: 750px;
 }
 
 /*--- HEADINGS ----*/
@@ -542,6 +557,12 @@ h1 {
 /* Paragrahs, strong, a*/
 strong {
   font-weight: 500;
+}
+
+/* Borders */
+
+.rounded {
+  border-radius: 4px;
 }
 
 /* Text preceding a section's heading */
@@ -641,10 +662,17 @@ button, .btn {
   padding:0px 12px;
 }
 
-@media (max-width: 782px) {
-  .carousel-button {
-    font-size: 0.9rem;
+.carousel-indicators, .carousel-control-prev, carousel-control-next {
+  display:none!important;
+}
+
+
+
+@media screen and (max-width: 782px) {
+  .carousel-button, .carousel-caption > p {
+    font-size: 13px;
   }
+
 }
 
 .carousel-button .active {
@@ -680,7 +708,7 @@ figure {
   color:inherit;
 }
 
-@media screen and (max-width:550px){
+@media screen and (max-width:500px){
   .wp-block-columns > .card {
     max-width: 180px;
     font-size: 0.8rem;
@@ -692,8 +720,9 @@ figure {
     margin-bottom:10px;
   }
 }
-@media screen and (max-width:400px){
-  .card {
+@media screen and (max-width:410px){
+  .wp-block-columns > .card  {
+    min-width: 100%;
     max-width: 100%;
   }
   .wp-block-columns {
@@ -830,26 +859,47 @@ input, textarea {
   }
 }
 
+
+/* Hero section */
+@media (max-width:768px){
+.hero-btn-container > a {
+   font-size: 14px;
+}
+}
+/* Meta slider */
+.flex-active {
+  background-color:var(--altius-blue)!important;
+}
+
 /* Recent posts */
 
 .recent-posts {
   display: flex;
   overflow:auto;
   flex-wrap:nowrap;
-  gap:15px;
 }
 
-@media only screen and (max-width: 700px) {
-  .recent-posts {
-    gap:15px;
-  }
-}
+
 
 .recent-post {
   /* min-width: 250px; */
   max-width: 85%;
+  padding:4px;
   display: flex;
   flex-direction: column;
+}
+
+@media only screen and (max-width: 1000px) {
+  .recent-posts {
+    gap:15px;
+  }
+  .recent-post {
+    padding:0px;
+  }
+  .article-title {
+    line-height: 36px;
+    font-size: 40px;
+  }
 }
 
 .recent-posts-title {
@@ -861,6 +911,20 @@ input, textarea {
   height: 0; /* This is important, as it allows the padding-top to determine the height */
 }
 
+.pagination {
+  gap:10px;
+}
+
+.page-numbers {
+  padding: 10px 20px;
+  background: #ededed;
+  border: 4px;
+}
+.current {
+  background:var(--altius-blue);
+}
+
+
 /* Content pages */
 
 .services-page h2, .article-container h2 {
@@ -870,17 +934,53 @@ input, textarea {
 
 /* Blog - articles */
 
+@media (min-width:768px){
+.blog-page-card {
+    padding-left:6px;
+    padding-right:6px;
+  }
+}
+
+
 .article-container {
   max-width:800px;
+  background: #ffffff81;
 }
 
 .page-title {
-  background-size: cover;
-  background-position: center center;
-  color: white; 
-  padding: 80px 10px;
-  margin-bottom:20px;
+  position: relative;
+  overflow: hidden;
+  color: white;
   margin-top:20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.page-header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  z-index: 1;  /* Ensure the header content is above the image */
+  position: relative;  /* Needed for z-index to take effect */
+}
+
+.background-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  z-index: -1;
+}
+
+
+.article-meta-info {
+  font-size:14px;
 }
 
 
@@ -891,6 +991,21 @@ ul {
   padding:0;
   padding-left:0;
   margin:0;
+}
+
+ul.ticks {
+  list-style-type: none; /* Removes the default bullets */
+}
+
+ul.ticks li::before {
+  content: '\f058'; 
+  font-family: "Font Awesome 5 Free"; 
+  display: inline-block;
+  margin-right: 10px; 
+  color: var(--altius-blue);
+}
+ul.ticks li {
+  padding-top: 6px; 
 }
 
 /* Footers */

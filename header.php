@@ -1,10 +1,11 @@
 <!doctype html>
 <html lang="en-GB">
-<link
+<link 
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
   />
   <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
+  <script defer src="https://kit.fontawesome.com/eab92a2496.js" crossorigin="anonymous"></script>
 <head>
   <meta charset="<?php bloginfo( 'charset' ); ?>">
   <meta name="viewport" content="width=device-width, initial-scale=1">

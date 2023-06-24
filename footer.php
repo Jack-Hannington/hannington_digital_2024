@@ -1,7 +1,8 @@
 </div>
 <footer id="colophon" class="site-footer">
     <div class="mountain-bg-right" id="#contact">
-        <div class="row container py-5" style="padding-left:15px; padding-right:15px;">
+        <div class="container">
+        <div class="row py-5">
         <div class="col-lg-6 col-12">
         <p class="brow-text">Start your journey</p>
         <h2 class="wp-block-heading">Contact us</h2>
@@ -17,6 +18,7 @@
 </div>
 <div class="col-lg-6 col-12">
 <iframe data-tally-src="https://tally.so/embed/mOlVyM?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" loading="lazy" width="100%" height="488" frameborder="0" marginheight="0" marginwidth="0" title="Contact form"></iframe><script>var d=document,w="https://tally.so/widgets/embed.js",v=function(){"undefined"!=typeof Tally?Tally.loadEmbeds():d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach((function(e){e.src=e.dataset.tallySrc}))};if("undefined"!=typeof Tally)v();else if(d.querySelector('script[src="'+w+'"]')==null){var s=d.createElement("script");s.src=w,s.onload=v,s.onerror=v,d.body.appendChild(s);}</script>
+</div>
 </div>
 </div>
 </div>
@@ -49,13 +51,11 @@
                     </div>
                     <div class="col-lg-3 col-md-6 col-12">
                         <p class="footer-header">Company</p>
-                        <p>About</p>
-                        <p>Contact</p>
-                        <p>Wellness</p>
-                        <p>Corporate</p>
-                        <p>Retreats</p>
-                        <p>Team</p>
-                        <p>Blog</p>
+                        <?php wp_nav_menu(array(
+            'theme_location' => 'company-menu',
+            'menu_class' => 'footer-menu',
+            'fallback_cb' => false
+        )); ?>
                 </div>
             </div>
            

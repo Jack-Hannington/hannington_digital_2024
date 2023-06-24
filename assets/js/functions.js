@@ -1,15 +1,3 @@
-// jQuery(document).ready(function($) {
-//     $(window).scroll(function() {
-//         var scrollTop = $(this).scrollTop();
-//         if (scrollTop > 20) {
-//           //add translucent class to nav
-//           $('nav').addClass('translucent-bg ');
-//         } else {
-//           $('nav').removeClass('translucent-bg');
-//         }
-//     });
-// });
-
 // Toggle menu
 
 const menu = document.querySelector(".menu-container");
@@ -105,7 +93,6 @@ jQuery(document).ready(function($) {
 
 // Convert classes to data-aos animations 
 window.addEventListener('DOMContentLoaded', (event) => {
-  console.log('DOM fully loaded and parsed');
   const blocks = document.querySelectorAll('.wp-block-group');
    
   blocks.forEach((block) => {
@@ -125,11 +112,5 @@ window.addEventListener('DOMContentLoaded', (event) => {
   });
 });
 
-// Services menu 
-document.addEventListener("DOMContentLoaded", function() {
-  document.querySelector('#services-toggle').addEventListener('click', function() {
-    document.querySelector('.services-menu').classList.toggle('show');
-  }
-  );
-});
+
 

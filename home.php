@@ -1,12 +1,12 @@
 <?php get_header(); ?>
-
+<div class="mountain-bg-right border-bottom">
 <main class="container mt-4">
   <h1 class="mb-4 py-4">Latest Articles</h1> <!-- Changed from <?php the_archive_title(); ?> to "Latest Articles" -->
 
   <?php if ( have_posts() ) : ?>
     <div class="row">
       <?php while ( have_posts() ) : the_post(); ?>
-        <div class="col-md-6 mb-4">
+        <div class="col-md-6 mb-4 blog-page-card">
         <a href="<?php the_permalink(); ?>">
           <div class="card">
             <?php if ( has_post_thumbnail() ) :
@@ -15,7 +15,7 @@
                 </div>
             <?php endif; ?>
             <div class="card-body">
-              <h5 class="card-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h5>
+              <h5 class="card-title"><?php the_title(); ?></h5>
               <p class="card-text"><?php the_excerpt(); ?></p>
               <button class="btn altius-btn__primary">Read More</button>
             </div>
@@ -36,5 +36,5 @@
   <?php endif; ?>
 
 </main>
-
+  </div>
 <?php get_footer(); ?>

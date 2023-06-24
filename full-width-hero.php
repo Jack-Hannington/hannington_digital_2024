@@ -2,30 +2,52 @@
 get_header();
 ?>
 
+
 <?php
 /**
- * Template Name: Altius services page
+ * Template Name: Full-width featured image page
  *
- * Displays a page with a sidebar menu to other services that toggles on mobile. 
+ * Displays a full-width hero based on the featured image
  */
 ?>
-<div class="services-page">
-<div class="container py-4 menu-services-container">
-  <div class="row">
-    <div class="col-lg-3 col-12 mb-2">
-      <button id="services-toggle" class="altius-btn__secondary w-100">Explore all services</button>
-      <?php wp_nav_menu(array(
-            'theme_location' => 'services-menu',
-            'menu_class' => 'services-menu animate__animated animate__fadeIn',
-            'fallback_cb' => false
-        )); ?>
+
+
+<?php if ( has_post_thumbnail() ) : ?>
+    <?php 
+$header_height = get_post_meta(get_the_ID(), 'header_height', true);
+if ( !empty($header_height) ) : ?>
+    <div class="page-title" style="height: <?php echo esc_attr($header_height); ?>;">
+<?php else : ?>
+    <div class="page-title">
+<?php endif; ?>
+    <img class="background-image" src="<?php echo get_the_post_thumbnail_url(); ?>" alt="altius_background_image" >
+        <div class="page-header container">
+            <h1><?php the_title(); ?></h1>
+            <div class="max-750"><?php the_excerpt();?></div>
+            <div class="d-flex gap-3 hero-btn-container">
+            <?php 
+            $button_text = get_post_meta(get_the_ID(), 'header_button_text', true);
+            $button_link = get_post_meta(get_the_ID(), 'header_button_link', true);
+            // Check if the button text and button link custom fields have values
+            if( $button_text && $button_link ): ?>
+                <a class="btn altius-btn__primary" href="<?php echo esc_url($button_link); ?>"><?php echo esc_html($button_text); ?></a>
+            <?php endif; ?>
+            <?php 
+            $button_text_two = get_post_meta(get_the_ID(), 'header_button_text_two', true);
+            $button_link_two = get_post_meta(get_the_ID(), 'header_button_link_two', true);
+            // Check if the button text and button link custom fields have values
+            if( $button_text_two && $button_link_two ): ?>
+                <a class="btn altius-btn__secondary " href="<?php echo esc_url($button_link_two); ?>"><?php echo esc_html($button_text_two); ?></a>
+            <?php endif; ?>
+            </div>
+        </div>
     </div>
-    <div class="col-lg-9 col-12">
-      <?php the_content(); ?>
-    </div>
-  </div>
-  </div>
-  <div class="border-top border-bottom bg-white py-5 mt-5">
+<?php endif; ?>
+
+<div class="container">
+    <?php the_content(); ?>
+            </div>
+            <div class="border-top border-bottom bg-white py-5 mt-5">
     <div class="col-12 container">
       <h2 class="pb-3">Latest articles</h2>
       <?php
@@ -102,7 +124,7 @@ if( $recent_posts_query->have_posts() ) {
 
 </div>
 </div>
-</div>
 <?php
 get_footer();
 ?>
+

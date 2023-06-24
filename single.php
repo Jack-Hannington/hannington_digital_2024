@@ -13,17 +13,17 @@ get_header();
 <div class="article-container container">
   <div class="row">
     <div class="col-12">
-    <h1 class="mb-4 mt-4"><?php the_title(); ?></h1>
+      <?php if ( has_post_thumbnail() ) : ?>
+        <div class="page-title" style="background-image: url('<?php echo get_the_post_thumbnail_url(); ?>'); padding-bottom: 56.25%; background-size: cover; background-position: center;"></div>
+      <?php endif; ?>
+      <h1 class="mb-4 mt-4 article-title"><?php the_title(); ?></h1>
     <?php 
       $author_id = get_post_field( 'post_author', get_the_ID() );
       $author_name = get_the_author_meta( 'display_name', $author_id );
       ?>
-      <div class="article-meta-info d-flex justify-content-between">
+      <div class="article-meta-info d-flex justify-content-between mb-4">
       <span>Published by <?php echo $author_name; ?> </span><br/><span> <?php echo get_the_date('j F Y'); ?></span>
       </div>
-      <?php if ( has_post_thumbnail() ) : ?>
-        <div class="page-title" style="background-image: url('<?php echo get_the_post_thumbnail_url(); ?>'); padding-bottom: 56.25%; background-size: cover; background-position: center;"></div>
-      <?php endif; ?>
       <?php the_content(); ?>
     </div>
   </div>
