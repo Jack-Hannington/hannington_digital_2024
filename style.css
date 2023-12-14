@@ -3,7 +3,7 @@ Theme Name: Altius Healthcare 2023
 Theme URI: http://hanningtondigital.com/altius
 Author: Jack Hannington
 Author URI: hannigtondigital.com
-Description: Modern light theme for Altius Healthcare
+Description: Customisable light theme for Altius Healthcare
 Version: 1.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -14,9 +14,13 @@ Text Domain: altius_healthcare
   --bg-color: #F6F5F5;
   --body-text-color: #051F29;
   --altius-dark-grey: #414548;
-  --altius-light-grey: #ededed;
+  --light-grey: #ededed;
   --body-font-size: 1rem;
-  --altius-blue: #1DC0C9;
+  --orange: #F16E00;
+  --bronze: #D2881B;
+  --silver: #9a9494;
+  --gold: #F0AA22;
+  --dark-blue: #0f3e61;
   --animate-duration: 300ms;
 }
 
@@ -63,18 +67,40 @@ body {
 
 /*---- Colours ----*/
 
-.altius-blue {
-  color:var(--altius-blue);
+.orange {
+  color:var(--orange);
 }
-.altius-blue-bg {
-  background-color:var(--altius-blue);
-  color: var(--altius-light-grey);
+.background-orange {
+  background-color:var(--orange);
+  color: var(--light-grey);
 }
 
 .altius-dark-grey-bg {
   background-color:var(--altius-dark-grey);
-  color: var(--altius-light-grey);
+  color: var(--light-grey);
 }
+
+.bronze {
+  color:var(--bronze);
+}
+.background-bronze {
+  background-color:var(--bronze);
+}
+
+.silver {
+  color:var(--silver);
+}
+.background-silver {
+  background-color:var(--silver);
+}
+
+.gold {
+  color:var(--gold);
+}
+.background-gold {
+  background-color:var(--gold);
+}
+
 
 
 /*---- NAV ----*/
@@ -83,7 +109,7 @@ nav {
   width: 100%;
   margin: 0;
   position: fixed;
-  background-color: var(--altius-dark-grey);
+  background-color:white;
   transition: 0.3s ease-in;
   top: 0;
   box-shadow: 0px 3px 7px 3px rgb(0 0 0 / 23%);
@@ -104,16 +130,16 @@ nav {
   width: 100%;
   justify-content: space-between;
   padding: 10px 15px;
-  color: var(--altius-light-grey)
+  color: var(--light-grey)
 }
 
 .navbar-light {
-  background-color: var(--altius-light-grey);
+  background-color: var(--light-grey);
   color: var(--altius-dark-grey)
 }
 
 .custom-logo {
-  width: 60px;
+  min-width: 200px;
   height: auto;
   transition: 0.3s ease-in;
 }
@@ -121,7 +147,7 @@ nav {
 .menu-container {
   position: fixed;
   top: 0;
-  background-color: var(--altius-dark-grey);
+  background-color: var(--dark-blue);
   width: calc(100%);
   height: 100vh;
   left: 0px;
@@ -132,7 +158,7 @@ nav {
 
 .nav-item>button {
   font-size: 14px;
-  border: 1px solid var(--altius-blue);
+  border: 1px solid var(--orange);
 }
 
 .nav-item {
@@ -148,8 +174,8 @@ nav {
   width: 44px;
   height: 44px;
   border-radius: 50%;
+  border: 1px solid lightgrey;
   display: inline-flex;
-  background: #4E5356;
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
@@ -161,7 +187,7 @@ nav {
 #showMenu span {
   width: 60%;
   height: 2px;
-  background-color: var(--altius-blue);
+  background-color: var(--orange);
 }
 
 .close-menu span {
@@ -189,7 +215,7 @@ nav {
 }
 
 .menu li a {
-  color: var(--altius-light-grey);
+  color: var(--light-grey);
   text-decoration: none;
   width: 100%;
   padding: 15px 15px;
@@ -200,7 +226,7 @@ nav {
 }
 
 .menu li a:hover {
-  color:var(--altius-blue);
+  color:var(--orange);
 }
 
 .menu-cta {
@@ -232,13 +258,13 @@ nav {
 
 /* Alert bar */
 .alert-bar {
-  background-color: var(--altius-blue);
+  background-color: var(--orange);
   position: absolute;
   left: 0;
   z-index: 1;
   text-align: center;
   width: 100%;
-  top:80px;
+  top:64px;
   padding:6px;
 }
 
@@ -276,7 +302,7 @@ nav {
 }
 
 .services-menu .current-menu-item a {
-  color: var(--altius-blue); 
+  color: var(--orange); 
   font-weight: 500;
 }
 
@@ -379,7 +405,7 @@ nav {
   .menu-body ul {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: end;
     white-space: nowrap;
     font-size: 0.9rem;
     font-weight: 300;
@@ -390,7 +416,7 @@ nav {
   }
 
   .menu li a {
-    color: #F6F5F5;
+    color: var(--body-text-color);
     padding:10px 15px;
   }
 
@@ -453,8 +479,7 @@ nav {
 /* Center default container */
 
 .header {
-  padding:40px 0px;
-  margin-bottom:40px;
+  padding:40px 0px 20px 0px;
 }
 
 .row {
@@ -478,7 +503,7 @@ nav {
 }
 
 .site-content {
-  margin-top: 117px;
+  margin-top: 100px;
   padding-left:0px;
   padding-right:0px;
 }
@@ -536,22 +561,33 @@ h5,
 h6 {
   font-family: 'Manrope', 'Inter', sans-serif;
   font-weight: 700;
+  color: #0c2b45;
 }
-.wp-block-heading {
+/* .wp-block-heading {
   max-width: 700px;
-}
+} */
+
 
 h1 {
-  font-size: 40px;
-  line-height: 50px;
+  font-weight: 900;
+  letter-spacing: -0.5px;
 }
+
 
 @media (min-width : 1200px) {
   h1 {
-    font-size: 50px;
-    line-height: 60px;
+    font-size: 3rem;
+    line-height: 3.1rem;
   }
 }
+
+@media (max-width : 800px) {
+  h1 {
+    font-size: 40px;
+    line-height: 46px;
+  }
+}
+
 
 
 /* Paragrahs, strong, a*/
@@ -568,8 +604,9 @@ strong {
 /* Text preceding a section's heading */
 
 .brow-text {
-  color: var(--altius-blue)!important;
+  color: var(--orange)!important;
   margin-bottom: 5px;
+  font-weight: 600;
 }
 
 
@@ -592,7 +629,7 @@ a {
 }
 
 a:hover {
-  color:var(--altius-blue);
+  color:var(--orange);
 }
 
 .wp-block-buttons {
@@ -602,7 +639,7 @@ a:hover {
 .wp-block-button__link, .wp-element-button,
 button, .btn {
   border-radius: 4px;
-  background-color: var(--altius-blue);
+  background-color: var(--orange);
   color: #F6F5F5;
   padding: 6px 20px;
   font-size: var(--body-font-size);
@@ -614,10 +651,10 @@ button, .btn {
   padding: 6px 20px;
   font-size: var(--body-font-size);
   background-color: #F6F5F5;
-  border:1px solid var(--altius-light-grey);
+  border:1px solid var(--light-grey);
 }
 .wp-block-button.altius-btn__primary .wp-block-button__link {
-  background-color: var(--altius-blue);
+  background-color: var(--orange);
   color: #F6F5F5;
   border-radius: 4px;
 }
@@ -630,7 +667,7 @@ button, .btn {
 /* Buttons and links */
 
 .altius-btn__primary {
-  background-color: var(--altius-blue);
+  background-color: var(--orange);
   color: #F6F5F5;
   border-radius: 4px;
 }
@@ -648,39 +685,38 @@ button, .btn {
   background-color: #fff;
   border-radius: 4px;
   color:#051F29;
-  border:1px solid var(--altius-light-grey);
+  border:1px solid var(--light-grey);
 }
 
-.carousel-button {
+/* .carousel-button {
   border:none;
   padding:10px 0px;
   background-color: transparent;
   color:#919191;
-}
-
+} */
+/* 
 .carousel-nav {
   padding:0px 12px;
-}
-
+} */
+/* 
 .carousel-indicators, .carousel-control-prev, carousel-control-next {
   display:none!important;
+} */
+
+.carousel-inner {
+  padding:15px;
+  background-color:white;
+  font-size:0.9rem;
+  border: 1px solid RGBA(0,0,0,0.17);
+  border-radius:4px;
 }
 
 
+/* Padding and margins */
 
-@media screen and (max-width: 782px) {
-  .carousel-button, .carousel-caption > p {
-    font-size: 13px;
-  }
-
-}
-
-.carousel-button .active {
-  color: var(--altius-blue);
-}
-
-.carousel-nav .active {
-  color: var(--altius-blue);
+.py-4 {
+  padding-top:2.2rem!important;
+  padding-bottom:2.2rem!important;
 }
 
 /* Images */
@@ -700,7 +736,7 @@ figure {
   padding:14px;
   transition:0.3s ease-in; 
   min-width: 250px;
-  font-size: 0.9rem;
+  /* font-size: 0.9rem; */
 }
 
 .card a {
@@ -710,8 +746,7 @@ figure {
 
 @media screen and (max-width:500px){
   .wp-block-columns > .card {
-    max-width: 180px;
-    font-size: 0.8rem;
+    /* max-width: 180px; */
     min-width: auto;
   }
   .wp-block-columns {
@@ -732,7 +767,7 @@ figure {
 
 .card:hover {
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
-  border:1px solid var(--altius-blue);
+  border:1px solid var(--orange);
   cursor:pointer;
 }
 
@@ -746,7 +781,7 @@ input, textarea {
   font-family: inherit;
   padding:10px;
   border-radius:4px;
-  border:1px solid var(--altius-light-grey);
+  border:1px solid var(--light-grey);
   width:100%;
   margin-bottom:10px;
 }
@@ -868,7 +903,7 @@ input, textarea {
 }
 /* Meta slider */
 .flex-active {
-  background-color:var(--altius-blue)!important;
+  background-color:var(--orange)!important;
 }
 
 /* Recent posts */
@@ -921,7 +956,7 @@ input, textarea {
   border: 4px;
 }
 .current {
-  background:var(--altius-blue);
+  background:var(--orange);
 }
 
 
@@ -944,7 +979,6 @@ input, textarea {
 
 .article-container {
   max-width:800px;
-  background: #ffffff81;
 }
 
 .page-title {
@@ -1002,13 +1036,212 @@ ul.ticks li::before {
   font-family: "Font Awesome 5 Free"; 
   display: inline-block;
   margin-right: 10px; 
-  color: var(--altius-blue);
+  color: var(--orange);
 }
 ul.ticks li {
   padding-top: 6px; 
 }
 
+
+/* Details element */
+details > summary {
+   font-weight: 500;
+   font-size:16px;
+}
+
+details {
+  padding:10px;
+  background-color: #fff;
+  border:1px solid var(--light-grey);
+}
+
+/* Altius Services ring */
+
+
+.circle-container {
+/*   border: 1px solid #334155; */
+  margin:auto;
+  height: 400px;
+  width: 400px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.circle {
+  border-radius: 50%;
+}
+
+
+.circle-outline {
+  width: 340px;
+  height: 340px;
+  border: 1px solid var(--orange);
+  position: absolute;
+  z-index: 1;
+}
+
+@keyframes fade-in {
+  0% {
+    opacity:0;
+  }
+  100% {
+    opacity:1;
+  }
+}
+
+.circle-inner {
+  width: 310px;
+  height: 310px;
+/*   outline: 1px solid #cbd5e1; */
+  background: #f9f9f9;
+  border:2px solid #cbd5e1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  z-index: 1;
+}
+
+.inner-circle-content {
+  position: relative; /* This will be the stacking context for absolute positioned content divs */
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center; /* Center child divs vertically */
+  justify-content: center; /* Center child divs horizontally */
+}
+
+.inner-circle-content > div {
+  position: absolute;
+  opacity: 0; 
+  text-align: center;
+/*   margin-bottom:20px; */
+  font-size: 14px;
+  padding: 35px;
+  transition: opacity 1s;
+  visibility: hidden; /* Initially set to hidden */
+}
+
+.inner-circle-content > div.active-content {
+  opacity: 1;
+  visibility: visible; /* Set to visible when active */
+}
+
+
+.icon {
+    transition: border-color 2s; /* Set a 2s transition for border color if you want a gradual change */
+}
+
+.icon img {
+  border-radius:50%;
+  max-width:100%;
+}
+
+.active-ring { 
+  border:3px solid var(--orange); 
+}
+
+
+.icon {
+    transition: border 0.2s ease-in-out;
+  width: 60px;
+  height: 60px;
+  outline: 1px solid #64748b;
+  position: absolute;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  background:#64748b;
+  z-index:2;
+}
+
+.icon-title {
+	margin-bottom:2px;
+	font-weight:600;
+}
+
+.icon:hover {
+  cursor:pointer;
+}
+
+#icon-1 {
+  left: calc(50%); /* 0° */
+  top: calc(50% - 170px);
+}
+
+#icon-2 {
+  left: calc(50% + 170px * sin(72deg)); /* 72° */
+  top: calc(50% - 170px * cos(72deg));
+}
+
+#icon-3 {
+  left: calc(50% + 170px * sin(2*72deg)); /* 144° */
+  top: calc(50% - 170px * cos(2*72deg));
+}
+
+#icon-4 {
+  left: calc(50% + 170px * sin(3*72deg)); /* 216° */
+  top: calc(50% - 170px * cos(3*72deg));
+}
+
+#icon-5 {
+  left: calc(50% + 170px * sin(4*72deg)); /* 288° */
+  top: calc(50% - 170px * cos(4*72deg));
+}
+
+@media screen and (max-width:600px){
+	.circle-container {
+		width:300px;
+		height:300px;
+		margin-top:40px;
+	}
+	.circle-inner {
+		width:290px;
+		height:290px;
+	}
+	.circle-outline {
+		width:320px;
+		height:320px;
+	}
+	.icon {
+		width:62px;
+		height:62px;
+	}
+	#icon-1 {
+	  left: calc(50%); /* 0° */
+	  top: calc(50% - 160px);
+	}
+
+	#icon-2 {
+	  left: calc(50% + 160px * sin(72deg)); /* 72° */
+	  top: calc(50% - 170px * cos(72deg));
+	}
+
+	#icon-3 {
+	  left: calc(50% + 160px * sin(2*72deg)); /* 144° */
+	  top: calc(50% - 170px * cos(2*72deg));
+	}
+
+	#icon-4 {
+	  left: calc(50% + 160px * sin(3*72deg)); /* 216° */
+	  top: calc(50% - 170px * cos(3*72deg));
+	}
+
+	#icon-5 {
+	  left: calc(50% + 160px * sin(4*72deg)); /* 288° */
+	  top: calc(50% - 170px * cos(4*72deg));
+	}
+}
+
+
 /* Footers */
+
+.site-footer {
+  border-top:1px solid #ededed;
+}
 
 .footer-menu li {
   list-style-type:none;

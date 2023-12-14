@@ -1,6 +1,6 @@
 </div>
 <footer id="colophon" class="site-footer">
-    <div class="mountain-bg-right" id="#contact">
+    <div id="contact">
         <div class="container">
         <div class="row py-5">
         <div class="col-lg-6 col-12">
@@ -17,12 +17,13 @@
 <li class="wp-social-link wp-social-link-mail wp-block-social-link"><a href="mailto:info@altiushealthcare.co.uk" class="wp-block-social-link-anchor"><svg width="24" height="24" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><path d="M20,4H4C2.895,4,2,4.895,2,6v12c0,1.105,0.895,2,2,2h16c1.105,0,2-0.895,2-2V6C22,4.895,21.105,4,20,4z M20,8.236l-8,4.882 L4,8.236V6h16V8.236z"></path></svg><span class="wp-block-social-link-label screen-reader-text">Email</span></a></li></ul>
 </div>
 <div class="col-lg-6 col-12">
-<iframe data-tally-src="https://tally.so/embed/mOlVyM?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" loading="lazy" width="100%" height="488" frameborder="0" marginheight="0" marginwidth="0" title="Contact form"></iframe><script>var d=document,w="https://tally.so/widgets/embed.js",v=function(){"undefined"!=typeof Tally?Tally.loadEmbeds():d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach((function(e){e.src=e.dataset.tallySrc}))};if("undefined"!=typeof Tally)v();else if(d.querySelector('script[src="'+w+'"]')==null){var s=d.createElement("script");s.src=w,s.onload=v,s.onerror=v,d.body.appendChild(s);}</script>
+<iframe data-tally-src="https://tally.so/embed/wLPLPJ?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" loading="lazy" width="100%" height="100" frameborder="0" marginheight="0" marginwidth="0" title="My central heating contact form"></iframe><script>var d=document,w="https://tally.so/widgets/embed.js",v=function(){"undefined"!=typeof Tally?Tally.loadEmbeds():d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach((function(e){e.src=e.dataset.tallySrc}))};if("undefined"!=typeof Tally)v();else if(d.querySelector('script[src="'+w+'"]')==null){var s=d.createElement("script");s.src=w,s.onload=v,s.onerror=v,d.body.appendChild(s);}</script>
+
 </div>
 </div>
 </div>
 </div>
-        <div class="mountain-bg altius-dark-grey-bg">
+        <div class="">
             <div class="container footer-links">
                 <!-- Footer content goes here -->
                 <div class="row py-5">
@@ -62,7 +63,7 @@
     </div>
     <div class="row border-top">
     <div class="col-12 container py-4">
-                        &copy <?php echo date('Y'); ?> Altius Healthcare Limted. All rights reserved. The Old Barn, 30B Park Road, Hale Cheshire, WA15 9NN.
+                        &copy <?php echo date('Y'); ?> Appliance World Online limited. Units 4-6 Premier Park, Acheson way, Trafford Park, M17 1GA
                     </div>
     </div>
         </div>

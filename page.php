@@ -5,7 +5,7 @@ get_header();
 
 <?php
 /**
- * Template Name: Altius page
+ * Template Name: Page
  *
  * Displays a page with only the page title.
  */
@@ -15,8 +15,13 @@ get_header();
 <?php
 $post = get_post();
 ?>
-<div class="mountain-bg-right" style="margin-bottom: -47px; padding-bottom: 20px;">
-<div class="container">  <div class="header"><h1><?php the_title(); ?></h1> </div><?php the_content(); ?></div>
+<div style="margin-bottom: -47px; padding-bottom: 20px;">
+<div class="container">  
+    <div class="header">
+        <h1><?php the_title(); ?></h1> 
+    </div>
+    <?php the_content(); ?>
+</div>
 </div>
 <div class="border-top py-5 mt-5">
     <div class="col-12 container">

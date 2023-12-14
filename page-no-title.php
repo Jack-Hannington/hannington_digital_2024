@@ -7,7 +7,7 @@ get_header();
 /**
  * Template Name: Page with no title
  *
- * Displays a page with no title for full flexibility
+ * Displays a page with only the page title.
  */
 ?>
 
@@ -15,8 +15,11 @@ get_header();
 <?php
 $post = get_post();
 ?>
-<div class="mountain-bg-right">
-<div class="container"><?php the_content(); ?></div>
+<div style="margin-bottom: -47px; padding-bottom: 20px;">
+<div class="container">  
+    <?php the_content(); ?>
+</div>
+</div>
 <div class="border-top py-5 mt-5">
     <div class="col-12 container">
       <h2 class="pb-3">Latest articles</h2>
@@ -32,7 +35,7 @@ $recent_posts_args = array(
 $recent_posts_query = new WP_Query( $recent_posts_args );
 
 if( $recent_posts_query->have_posts() ) {
-    echo '<div class="recent-posts row">';
+    echo '<div class="recent-posts row gap-4">';
     while( $recent_posts_query->have_posts() ) {
         $recent_posts_query->the_post();
         ?>
@@ -94,8 +97,6 @@ if( $recent_posts_query->have_posts() ) {
 
 </div>
 </div>
-</div>
-
 
 
 <?php

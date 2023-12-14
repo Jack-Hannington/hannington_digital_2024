@@ -4,7 +4,7 @@ get_header();
 
 <?php
 /**
- * Template Name: Altius services page
+ * Template Name: Services page
  *
  * Displays a page with a sidebar menu to other services that toggles on mobile. 
  */

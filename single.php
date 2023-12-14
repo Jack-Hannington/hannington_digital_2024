@@ -4,12 +4,12 @@ get_header();
 
 <?php
 /**
- * Template Name: Altius post page
+ * Template Name: Post page
  *
  * Displays a page with only the page title.
  */
 ?>
-<div class="mountain-bg-right">
+<div >
 <div class="article-container container">
   <div class="row">
     <div class="col-12">

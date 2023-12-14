@@ -22,6 +22,10 @@
 <nav>
   <div class="navbar container">
     <div id="nav-logo" class="logo nav-item">
+  <!-- <div class="logo-wrapper">
+      <span class="logo">My Central Heating</span>
+      <span class="logo-subheading">An Appliance World Online company</span>
+</div> -->
       <?php
         if (function_exists('the_custom_logo')) {
             the_custom_logo();
@@ -31,6 +35,7 @@
 
     <div id="nav-toggle" class="menu-toggle nav-item">
       <div id="showMenu" class="nav-toggle">
+        
   <span></span>
   <span></span>
   <span></span>
@@ -64,10 +69,10 @@
       </div>
       <div class="menu-footer">
       <button class="altius-btn__primary wp-block-button__link ">
-        <a href="https://altiushealthcare.connect.tm3app.com/" title="book appointment">Book appointment</a>
+        <a href="/boiler-cover" title="book appointment">Get cover</a>
         
       </button>
-      <span class="btn altius-btn__secondary mt-2 w-100"><tel:01614011000>0161 401 1000</tel:01614011000></span>
+      <span class="btn altius-btn__secondary mt-2 w-100"><tel:0161 794 3030>0161 794 3030</tel:0161 794 3030></span>
       <ul class="wp-block-social-links has-normal-icon-size is-layout-flex" style="
     margin: auto;
     justify-content: center;
@@ -78,12 +83,12 @@
 
 <li class="wp-social-link wp-social-link-youtube wp-block-social-link"><a href="https://www.youtube.com/@altiushealthcare8704" class="wp-block-social-link-anchor"><svg width="24" height="24" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><path d="M21.8,8.001c0,0-0.195-1.378-0.795-1.985c-0.76-0.797-1.613-0.801-2.004-0.847c-2.799-0.202-6.997-0.202-6.997-0.202 h-0.009c0,0-4.198,0-6.997,0.202C4.608,5.216,3.756,5.22,2.995,6.016C2.395,6.623,2.2,8.001,2.2,8.001S2,9.62,2,11.238v1.517 c0,1.618,0.2,3.237,0.2,3.237s0.195,1.378,0.795,1.985c0.761,0.797,1.76,0.771,2.205,0.855c1.6,0.153,6.8,0.201,6.8,0.201 s4.203-0.006,7.001-0.209c0.391-0.047,1.243-0.051,2.004-0.847c0.6-0.607,0.795-1.985,0.795-1.985s0.2-1.618,0.2-3.237v-1.517 C22,9.62,21.8,8.001,21.8,8.001z M9.935,14.594l-0.001-5.62l5.404,2.82L9.935,14.594z"></path></svg><span class="wp-block-social-link-label screen-reader-text">YouTube</span></a></li>
 
-<li class="wp-social-link wp-social-link-mail wp-block-social-link"><a href="mailto:info@altiushealthcare.co.uk" class="wp-block-social-link-anchor"><svg width="24" height="24" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><path d="M20,4H4C2.895,4,2,4.895,2,6v12c0,1.105,0.895,2,2,2h16c1.105,0,2-0.895,2-2V6C22,4.895,21.105,4,20,4z M20,8.236l-8,4.882 L4,8.236V6h16V8.236z"></path></svg><span class="wp-block-social-link-label screen-reader-text">Email</span></a></li></ul>
+<li class="wp-social-link wp-social-link-mail wp-block-social-link"><a href="mailto:info@applianceworldonline.com" class="wp-block-social-link-anchor"><svg width="24" height="24" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><path d="M20,4H4C2.895,4,2,4.895,2,6v12c0,1.105,0.895,2,2,2h16c1.105,0,2-0.895,2-2V6C22,4.895,21.105,4,20,4z M20,8.236l-8,4.882 L4,8.236V6h16V8.236z"></path></svg><span class="wp-block-social-link-label screen-reader-text">Email</span></a></li></ul>
       </div>
     </div>
     <div id="nav-cta" class="nav-item menu-cta">
       <button class="altius-btn__primary wp-block-button__link ">
-        <a href="https://altiushealthcare.connect.tm3app.com/" title="book appointment">Book</a>
+        <a href="/boiler-cover" title="book appointment">Get cover</a>
       </button>
     </div>
   </div>

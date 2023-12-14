@@ -1,3 +1,3 @@
-# altius_healthcare
+# My Central Heating theme
 
-Theme for healthcare company Altius offering physiotherapy, wellness, nutrition, corporate services and retreats. # my-central-heating-theme
+Theme for My Central Heating
