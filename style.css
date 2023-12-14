@@ -83,12 +83,19 @@ body {
 .bronze {
   color:var(--bronze);
 }
+
+.border-bronze {
+  border:1px solid var(--bronze)
+}
 .background-bronze {
   background-color:var(--bronze);
 }
 
 .silver {
   color:var(--silver);
+}
+.border-silver {
+  border:1px solid var(--silver)
 }
 .background-silver {
   background-color:var(--silver);
@@ -99,6 +106,9 @@ body {
 }
 .background-gold {
   background-color:var(--gold);
+}
+.border-gold {
+  border:1px solid var(--gold)
 }
 
 
@@ -221,7 +231,6 @@ nav {
   padding: 15px 15px;
   height: 100%;
   display: block;
-  font-weight: 300;
   transition: 0.3s ease-in;
 }
 
@@ -408,7 +417,6 @@ nav {
     justify-content: end;
     white-space: nowrap;
     font-size: 0.9rem;
-    font-weight: 300;
   }
 
   .menu-body li {
