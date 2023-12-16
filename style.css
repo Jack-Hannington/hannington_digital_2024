@@ -12,11 +12,11 @@ Text Domain: altius_healthcare
 
 :root {
   --bg-color: #F6F5F5;
-  --body-text-color: #051F29;
+  --body-text-color: #273308;
   --altius-dark-grey: #414548;
   --light-grey: #ededed;
   --body-font-size: 1rem;
-  --orange: #F16E00;
+  --green: #4F7F0C;
   --bronze: #D2881B;
   --silver: #9a9494;
   --gold: #F0AA22;
@@ -67,11 +67,11 @@ body {
 
 /*---- Colours ----*/
 
-.orange {
-  color:var(--orange);
+.green {
+  color:var(--green);
 }
-.background-orange {
-  background-color:var(--orange);
+.background-green {
+  background-color:var(--green);
   color: var(--light-grey);
 }
 
@@ -122,7 +122,7 @@ nav {
   background-color:white;
   transition: 0.3s ease-in;
   top: 0;
-  box-shadow: 0px 3px 7px 3px rgb(0 0 0 / 23%);
+  box-shadow: 0px -4px 19px 3px rgb(0 0 0 / 13%);
   z-index: 1000;
 }
 
@@ -149,7 +149,7 @@ nav {
 }
 
 .custom-logo {
-  min-width: 200px;
+  width: 100px;
   height: auto;
   transition: 0.3s ease-in;
 }
@@ -157,7 +157,7 @@ nav {
 .menu-container {
   position: fixed;
   top: 0;
-  background-color: var(--dark-blue);
+  background-color: var(--light-grey);
   width: calc(100%);
   height: 100vh;
   left: 0px;
@@ -168,11 +168,11 @@ nav {
 
 .nav-item>button {
   font-size: 14px;
-  border: 1px solid var(--orange);
+  border: 1px solid var(--green);
 }
 
 .nav-item {
-  flex: 1;
+  /* flex: 1.3; */
 }
 
 #nav-toggle,
@@ -197,7 +197,7 @@ nav {
 #showMenu span {
   width: 60%;
   height: 2px;
-  background-color: var(--orange);
+  background-color: var(--green);
 }
 
 .close-menu span {
@@ -225,7 +225,6 @@ nav {
 }
 
 .menu li a {
-  color: var(--light-grey);
   text-decoration: none;
   width: 100%;
   padding: 15px 15px;
@@ -235,7 +234,7 @@ nav {
 }
 
 .menu li a:hover {
-  color:var(--orange);
+  color:var(--green);
 }
 
 .menu-cta {
@@ -267,7 +266,7 @@ nav {
 
 /* Alert bar */
 .alert-bar {
-  background-color: var(--orange);
+  background-color: var(--green);
   position: absolute;
   left: 0;
   z-index: 1;
@@ -311,7 +310,7 @@ nav {
 }
 
 .services-menu .current-menu-item a {
-  color: var(--orange); 
+  color: var(--green); 
   font-weight: 500;
 }
 
@@ -348,6 +347,39 @@ nav {
   }
   .menu-services-container {
     height:auto;
+  }
+}
+
+/* Sidebar offers */
+
+@media (min-width:996px){
+  .sidebar-offers {
+    padding-left:20px;
+}
+}
+
+/* Services summary bar */
+
+.services-summary img  {
+   max-width:50px;
+}
+
+.services-summary p {
+  margin-bottom:0px;
+}
+
+@media (max-width:600px){
+  .services-summary p {
+    font-size: 14px;
+  }
+  .services-summary img {
+    max-width:35px;
+  }
+  .services-summary .wp-block-column {
+    min-width: 160px;
+  }
+  .services-summary .wp-block-columns {
+   gap:0px!important;
   }
 }
 
@@ -389,7 +421,7 @@ nav {
 
   .nav-item {
     display: flex;
-    flex: 1;
+    /* flex: 1; */
   }
 
   .menu-cta {
@@ -496,7 +528,7 @@ nav {
 
 .container {
   margin: auto;
-  max-width: 1200px;
+  max-width: 1100px;
 }
 
 @media (max-width:1000px){
@@ -511,7 +543,7 @@ nav {
 }
 
 .site-content {
-  margin-top: 100px;
+  margin-top: 65px;
   padding-left:0px;
   padding-right:0px;
 }
@@ -521,27 +553,27 @@ nav {
   gap: 4em;
 }
 
-/* Mountain background */
+/* leaf background */
 
-.mountain-bg {
-  background-image: url('https://www.altiushealthcare.co.uk/wp-content/uploads/2023/06/Mountain_bg_left_crop-1.png');
+.leaf-bg {
+  background-image: url('http://cheshire-joint-injections.local/wp-content/uploads/2023/12/Logo-background-image.png');
   background-repeat: no-repeat;
-  background-size:cover;
+  background-size:contain;
 }
 
 
-.mountain-bg-right {
-  background-image: url('https://www.altiushealthcare.co.uk/wp-content/uploads/2023/06/Mountain_bg_right_100-1.png');
+.leaf-bg-right {
+  background-image: url('http://cheshire-joint-injections.local/wp-content/uploads/2023/12/Logo-background-image.png');
   background-repeat: no-repeat;
-  background-size:cover;
+  background-size:contain;
   background-position: right;
 }
 
 @media (max-width: 650px) {
-  .mountain-bg {
+  .leaf-bg {
     background-size: cover;
   }
-  .mountain-bg-left {
+  .leaf-bg-left {
     background-position: left;
   }
 }
@@ -567,9 +599,9 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: 'Manrope', 'Inter', sans-serif;
-  font-weight: 700;
-  color: #0c2b45;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  color: #273308;
 }
 /* .wp-block-heading {
   max-width: 700px;
@@ -577,22 +609,22 @@ h6 {
 
 
 h1 {
-  font-weight: 900;
+  font-weight: 600;
   letter-spacing: -0.5px;
 }
 
 
 @media (min-width : 1200px) {
-  h1 {
+  .landing-h1 {
     font-size: 3rem;
     line-height: 3.1rem;
   }
 }
 
 @media (max-width : 800px) {
-  h1 {
-    font-size: 40px;
-    line-height: 46px;
+  landing-h1  {
+    font-size: 36px;
+    line-height: 40px;
   }
 }
 
@@ -612,7 +644,7 @@ strong {
 /* Text preceding a section's heading */
 
 .brow-text {
-  color: var(--orange)!important;
+  color: var(--green)!important;
   margin-bottom: 5px;
   font-weight: 600;
 }
@@ -637,7 +669,7 @@ a {
 }
 
 a:hover {
-  color:var(--orange);
+  color:var(--green);
 }
 
 .wp-block-buttons {
@@ -647,7 +679,7 @@ a:hover {
 .wp-block-button__link, .wp-element-button,
 button, .btn {
   border-radius: 4px;
-  background-color: var(--orange);
+  background-color: var(--green);
   color: #F6F5F5;
   padding: 6px 20px;
   font-size: var(--body-font-size);
@@ -662,7 +694,7 @@ button, .btn {
   border:1px solid var(--light-grey);
 }
 .wp-block-button.altius-btn__primary .wp-block-button__link {
-  background-color: var(--orange);
+  background-color: var(--green);
   color: #F6F5F5;
   border-radius: 4px;
 }
@@ -675,7 +707,7 @@ button, .btn {
 /* Buttons and links */
 
 .altius-btn__primary {
-  background-color: var(--orange);
+  background-color: var(--green);
   color: #F6F5F5;
   border-radius: 4px;
 }
@@ -775,7 +807,7 @@ figure {
 
 .card:hover {
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
-  border:1px solid var(--orange);
+  border:1px solid var(--green);
   cursor:pointer;
 }
 
@@ -911,7 +943,7 @@ input, textarea {
 }
 /* Meta slider */
 .flex-active {
-  background-color:var(--orange)!important;
+  background-color:var(--green)!important;
 }
 
 /* Recent posts */
@@ -964,7 +996,7 @@ input, textarea {
   border: 4px;
 }
 .current {
-  background:var(--orange);
+  background:var(--green);
 }
 
 
@@ -1044,7 +1076,7 @@ ul.ticks li::before {
   font-family: "Font Awesome 5 Free"; 
   display: inline-block;
   margin-right: 10px; 
-  color: var(--orange);
+  color: var(--green);
 }
 ul.ticks li {
   padding-top: 6px; 
@@ -1087,7 +1119,7 @@ details {
 .circle-outline {
   width: 340px;
   height: 340px;
-  border: 1px solid var(--orange);
+  border: 1px solid var(--green);
   position: absolute;
   z-index: 1;
 }
@@ -1150,7 +1182,7 @@ details {
 }
 
 .active-ring { 
-  border:3px solid var(--orange); 
+  border:3px solid var(--green); 
 }
 
 

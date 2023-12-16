@@ -69,7 +69,7 @@
       </div>
       <div class="menu-footer">
       <button class="altius-btn__primary wp-block-button__link ">
-        <a href="/boiler-cover" title="book appointment">Get cover</a>
+        <a href="/boiler-cover" title="book appointment">Get starter -></a>
         
       </button>
       <span class="btn altius-btn__secondary mt-2 w-100"><tel:0161 794 3030>0161 794 3030</tel:0161 794 3030></span>
@@ -88,7 +88,7 @@
     </div>
     <div id="nav-cta" class="nav-item menu-cta">
       <button class="altius-btn__primary wp-block-button__link ">
-        <a href="/boiler-cover" title="book appointment">Get cover</a>
+        <a href="/boiler-cover" title="book appointment">Get started -></a>
       </button>
     </div>
   </div>

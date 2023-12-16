@@ -286,4 +286,21 @@ add_theme_support( 'post-thumbnails' );
 add_post_type_support( 'page', 'excerpt' );
 
 
+// Custom query for offers
+function create_offers_cpt() {
+    $args = array(
+        'public' => true,
+        'label'  => 'Sidebar offers',
+        'show_in_rest' => true, // Enable Gutenberg editor
+        'supports' => array('title', 'editor', 'thumbnail', 'custom-fields'), // Ensure 'custom-fields' is included
+
+        // Define other necessary arguments like 'supports', 'labels', etc.
+    );
+    register_post_type('offer', $args);
+}
+add_action('init', 'create_offers_cpt');
+
+
+
+
 

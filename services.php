@@ -10,24 +10,45 @@ get_header();
  */
 ?>
 <div class="services-page">
-<div class="container py-4 menu-services-container">
+<div class="container py-4">
   <div class="row">
-    <div class="col-lg-3 col-12 mb-2">
-      <button id="services-toggle" class="altius-btn__secondary w-100">Explore all services</button>
-      <?php wp_nav_menu(array(
-            'theme_location' => 'services-menu',
-            'menu_class' => 'services-menu animate__animated animate__fadeIn',
-            'fallback_cb' => false
-        )); ?>
-    </div>
     <div class="col-lg-9 col-12">
       <?php the_content(); ?>
     </div>
+    <div class="col-lg-3 col-12 mb-2 sidebar-offers">
+    <?php
+    $args = array(
+        'post_type' => 'offer', // Replace with your custom post type
+        'posts_per_page' => -1
+    );
+
+    $offers_query = new WP_Query($args);
+
+    if ($offers_query->have_posts()) :
+        while ($offers_query->have_posts()) : $offers_query->the_post();
+            // Get the color from a custom field (replace 'offer_color' with your actual field name)
+            $offer_color = get_post_meta(get_the_ID(), 'offer_color', true);
+            // Apply the color as inline CSS
+            $style = $offer_color ? "style='color: {$offer_color};'" : '';
+
+            echo "<div class='offer' {$style}>";
+            the_content(); // or use get_the_excerpt() for a shorter version
+            echo '</div>';
+        endwhile;
+    endif;
+
+    wp_reset_postdata();
+    ?>
+</div>
+
+
+
+
   </div>
   </div>
   <div class="border-top border-bottom bg-white py-5 mt-5">
     <div class="col-12 container">
-      <h2 class="pb-3">Latest articles</h2>
+      
       <?php
 $current_page_title = strtolower(get_the_title()); // get the current page title and convert to lowercase
 

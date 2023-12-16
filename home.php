@@ -1,5 +1,5 @@
 <?php get_header(); ?>
-<div class="mountain-bg-right border-bottom pb-4">
+<div class="leaf-bg-right border-bottom pb-4">
 <main class="container mt-4">
   <h1 class="mb-4 py-4">Latest Articles</h1> <!-- Changed from <?php the_archive_title(); ?> to "Latest Articles" -->
 
