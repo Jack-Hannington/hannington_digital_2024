@@ -11,7 +11,7 @@ Text Domain: altius_healthcare
 */
 
 :root {
-  --bg-color: #F6F5F5;
+  --bg-color: #fff;
   --body-text-color: #273308;
   --altius-dark-grey: #414548;
   --light-grey: #ededed;
@@ -22,6 +22,7 @@ Text Domain: altius_healthcare
   --gold: #F0AA22;
   --dark-blue: #0f3e61;
   --animate-duration: 300ms;
+  --default-box-shadow: 0px -4px 19px 3px rgb(0 0 0 / 13%);
 }
 
 * {
@@ -112,6 +113,11 @@ body {
 }
 
 
+/* Shadows */
+.default-shadow {
+  box-shadow: var(--default-box-shadow);
+}
+
 
 /*---- NAV ----*/
 
@@ -157,7 +163,7 @@ nav {
 .menu-container {
   position: fixed;
   top: 0;
-  background-color: var(--light-grey);
+  background-color: #fff;
   width: calc(100%);
   height: 100vh;
   left: 0px;
@@ -178,6 +184,7 @@ nav {
 #nav-toggle,
 .close-menu {
   text-align: right;
+  order:3;
 }
 
 .nav-toggle {
@@ -202,6 +209,7 @@ nav {
 
 .close-menu span {
   font-size: 20px;
+  color: var(--body-text-color);
 }
 
 .menu-header {
@@ -221,7 +229,7 @@ nav {
 }
 
 .menu li {
-  border-bottom: 1px solid #626262;
+  border-bottom: 1px solid #ededed;
 }
 
 .menu li a {
@@ -231,15 +239,16 @@ nav {
   height: 100%;
   display: block;
   transition: 0.3s ease-in;
+  font-size:14px;
+  font-weight:500;
+  color: var(--body-text-color);
 }
 
 .menu li a:hover {
   color:var(--green);
 }
 
-.menu-cta {
-  display: none;
-}
+
 
 .menu-footer {
   margin: 15px;
@@ -352,31 +361,66 @@ nav {
 
 /* Sidebar offers */
 
+.sidebar-offers {
+  font-size: 14px;
+}
+
 @media (min-width:996px){
   .sidebar-offers {
-    padding-left:20px;
+        display: flex;
+    flex-direction: column;
+    align-items: end;
 }
+.sidebar-offers .offer {
+  width: 300px;
+}
+.sidebar-offers {
+  position: sticky;
+  top: 100px;
+}
+}
+
+@media (max-width:996px){
+  .sidebar-offers {
+    margin-top:40px;
+    font-size: 16px;
+  }
 }
 
 /* Services summary bar */
 
 .services-summary img  {
-   max-width:50px;
+   max-width:36px;
 }
 
 .services-summary p {
   margin-bottom:0px;
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 18px;
+
+}
+
+@media (min-width:1200px){
+  .services-summary p {
+    margin-bottom:0px;
+    font-size: 16px;
+    line-height: 18px;
+  }
+  .services-summary img  {
+    max-width:40px;
+ }
 }
 
 @media (max-width:600px){
   .services-summary p {
-    font-size: 14px;
+    font-size: 13px;
   }
   .services-summary img {
-    max-width:35px;
+    max-width:30px;
   }
   .services-summary .wp-block-column {
-    min-width: 160px;
+    min-width: 100px;
   }
   .services-summary .wp-block-columns {
    gap:0px!important;
@@ -407,17 +451,35 @@ nav {
 .show {
   display: flex;
   flex-direction: column;
+  z-index: 1;
 }
 
 .hide-sm {
   display: none;
 }
 
+#nav-cta {
+  flex: 3;
+  text-align: right;
+  margin-right: 10px;
+}
+
+@media (max-width:450px){
+  .nav-cta-button {
+  font-size: 12px!important;
+}
+}
 
 @media (min-width:1000px) {
   .navbar {
     align-items: center;
   }
+  #nav-cta {
+    flex: 1;
+    white-space: nowrap;
+    text-align: right;
+  }
+  
 
   .nav-item {
     display: flex;
@@ -436,6 +498,7 @@ nav {
     height: auto;
     flex: 8;
     padding: 0;
+
     background-color: inherit;
   }
 
@@ -480,7 +543,12 @@ nav {
   }
 
   .sub-menu {
-    background-color: #444446;
+    background-color: #fff;
+    border-bottom: 1px solid;
+    border-right: 1px solid;
+    border-left: 1px solid;
+    margin-top:12px;
+    /* box-shadow: -1px 6px 13px 0px #d8d8d8; */
   }
 
   /* Show sub-menu on hover */
@@ -528,7 +596,7 @@ nav {
 
 .container {
   margin: auto;
-  max-width: 1100px;
+  max-width: 1200px;
 }
 
 @media (max-width:1000px){
@@ -599,9 +667,10 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: 'Inter', sans-serif;
-  font-weight: 600;
+  font-family: 'Manrope', 'Inter', sans-serif;
+  font-weight: 700;
   color: #273308;
+  letter-spacing: -0.5px;
 }
 /* .wp-block-heading {
   max-width: 700px;
@@ -609,14 +678,15 @@ h6 {
 
 
 h1 {
-  font-weight: 600;
-  letter-spacing: -0.5px;
+  font-weight: 700;
+
 }
 
 
 @media (min-width : 1200px) {
   .landing-h1 {
     font-size: 3rem;
+    font-weight: 700;
     line-height: 3.1rem;
   }
 }
@@ -632,7 +702,7 @@ h1 {
 
 /* Paragrahs, strong, a*/
 strong {
-  font-weight: 500;
+  font-weight: 600;
 }
 
 /* Borders */
@@ -646,7 +716,7 @@ strong {
 .brow-text {
   color: var(--green)!important;
   margin-bottom: 5px;
-  font-weight: 600;
+  font-weight: 500;
 }
 
 
@@ -664,8 +734,9 @@ strong {
 
 a {
   text-decoration: none;
-  color:inherit;
+  color:var(--green);
   transition: all 0.3s ease;
+
 }
 
 a:hover {
@@ -678,20 +749,24 @@ a:hover {
 
 .wp-block-button__link, .wp-element-button,
 button, .btn {
-  border-radius: 4px;
+  border-radius: 50px;
   background-color: var(--green);
   color: #F6F5F5;
-  padding: 6px 20px;
-  font-size: var(--body-font-size);
+  padding: 8px 20px;
+  font-size: 14px;
+  font-weight: 500;
   border:1px solid transparent;
   transition: 0.3s;
+  box-shadow: inset 0px -3px 6px 2px #466818;
 }
 
 .wp-block-button .wp-block-button__link.is-style-outline, .wp-block-button.is-style-outline>.wp-block-button__link {
-  padding: 6px 20px;
-  font-size: var(--body-font-size);
-  background-color: #F6F5F5;
+  padding: 8px 20px;
+  font-size: 14px;
+  background-color: #fff;
+  box-shadow:  inset 0px -3px 6px 2px #f4f4f4;
   border:1px solid var(--light-grey);
+  color: var(--green)!important;
 }
 .wp-block-button.altius-btn__primary .wp-block-button__link {
   background-color: var(--green);
@@ -728,20 +803,7 @@ button, .btn {
   border:1px solid var(--light-grey);
 }
 
-/* .carousel-button {
-  border:none;
-  padding:10px 0px;
-  background-color: transparent;
-  color:#919191;
-} */
-/* 
-.carousel-nav {
-  padding:0px 12px;
-} */
-/* 
-.carousel-indicators, .carousel-control-prev, carousel-control-next {
-  display:none!important;
-} */
+
 
 .carousel-inner {
   padding:15px;
@@ -751,6 +813,26 @@ button, .btn {
   border-radius:4px;
 }
 
+
+/* iFrames */
+.google-maps-embed {
+  height: 100%;
+  border-radius: 10px;
+  border: 1px solid #eded;
+  box-shadow: var(--default-box-shadow);
+  min-height: 400px;
+}
+
+.maps-container {
+  padding-top:20px;
+}
+
+@media (min-width:996px){
+  .maps-container {
+    padding-left:30px;
+    padding-top:0px;
+  }
+}
 
 /* Padding and margins */
 
@@ -772,16 +854,29 @@ figure {
 /* Cards */
 
 .card {
-  border-radius: 4px;
+  border-radius: 10px;
   padding:14px;
   transition:0.3s ease-in; 
   min-width: 250px;
+  border:1px solid var(--light-grey);
+  box-shadow: 0px 4px 10px 3px rgb(0 0 0 / 5%);
   /* font-size: 0.9rem; */
+}
+
+.card p {
+  font-size: 14px;
+}
+
+.card:hover > .wp-block-buttons >  .wp-block-button a{
+  background-color: var(--green);
+  box-shadow: none;
+  color:white!important;
+  opacity: 1;
 }
 
 .card a {
   text-decoration: none;
-  color:inherit;
+  /* color:inherit; */
 }
 
 @media screen and (max-width:500px){
@@ -986,6 +1081,11 @@ input, textarea {
   height: 0; /* This is important, as it allows the padding-top to determine the height */
 }
 
+.recent-post > a > .post-image {
+  border-radius:10px;
+  box-shadow: 0px 4px 10px 3px rgb(0 0 0 / 5%);
+}
+
 .pagination {
   gap:10px;
 }
@@ -1003,8 +1103,8 @@ input, textarea {
 /* Content pages */
 
 .services-page h2, .article-container h2 {
-  font-size:26px;
-  margin-top:30px;
+  margin-top:15px;
+  font-size: 22px;
 }
 
 /* Blog - articles */
@@ -1281,6 +1381,7 @@ details {
 
 .site-footer {
   border-top:1px solid #ededed;
+  background:#f5f7f2;
 }
 
 .footer-menu li {
@@ -1302,5 +1403,4 @@ footer .custom-logo {
 
 .footer-header {
   font-weight:400;
-  color:white;
 }

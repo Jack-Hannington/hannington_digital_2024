@@ -13,12 +13,12 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
 document.querySelector("#showMenu").addEventListener("click", () => {
   document.body.style.overflowY = "hidden"; //Prevent scrolling when animating
-  menu.classList.remove("show", "animate__slideOutRight");
-  menu.classList.add("show", "animate__slideInRight", "animate__animated");
+  menu.classList.remove("show", "animate__fadeOutLeft");
+  menu.classList.add("show", "animate__fadeInRight", "animate__animated");
 });
 
 document.querySelector("#closeMenu").addEventListener("click", () => {
-  menu.classList.add("animate__slideOutRight");
+  menu.classList.add("animate__fadeOutLeft");
   setTimeout(function () {
     document.body.style.overflowY = "auto";
     menu.classList.remove("show");
@@ -29,11 +29,11 @@ const mediaQueryList = window.matchMedia('(min-width: 1000px)');
 const checkViewportWidth = () => {
     if (mediaQueryList.matches) {
         // If viewport is 1000px or wider, remove the class
-        menu.classList.remove('animate__slideOutRight');
+        menu.classList.remove('animate__fadeOutLeft');
         // menu.classList.remove('admin-margin');
     } else {
         // If viewport is less than 1000px wide, add the class
-        menu.classList.add('animate__slideOutRight');
+        menu.classList.add('animate__fadeOutLeft');
         // menu.classList.add('admin-margin');
     }
 };

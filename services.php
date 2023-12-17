@@ -12,10 +12,11 @@ get_header();
 <div class="services-page">
 <div class="container py-4">
   <div class="row">
-    <div class="col-lg-9 col-12">
+    <div class="col-lg-8 col-12">
       <?php the_content(); ?>
     </div>
-    <div class="col-lg-3 col-12 mb-2 sidebar-offers">
+    <div class="col-lg-4 col-12 mb-2 ">
+        <div class="sidebar-offers">
     <?php
     $args = array(
         'post_type' => 'offer', // Replace with your custom post type
@@ -39,6 +40,8 @@ get_header();
 
     wp_reset_postdata();
     ?>
+</div>
+
 </div>
 
 

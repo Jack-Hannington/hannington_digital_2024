@@ -14,9 +14,9 @@
 
      
 </div>
-<div class="col-lg-6 col-12">
+<div class="col-lg-6 col-12 maps-container">
     <h3>Where to find us</h3>
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2381.7353400580655!2d-2.107245623303167!3d53.3479936746003!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487a4bf36f4952ef%3A0x9fea728f4afebe2e!2sCheshire%20Physiotherapy%20and%20Pilates%20Clinic!5e0!3m2!1sen!2suk!4v1702740676626!5m2!1sen!2suk" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    <iframe class="google-maps-embed" style="max-width:100%;" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2381.7353400580655!2d-2.107245623303167!3d53.3479936746003!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487a4bf36f4952ef%3A0x9fea728f4afebe2e!2sCheshire%20Physiotherapy%20and%20Pilates%20Clinic!5e0!3m2!1sen!2suk!4v1702740676626!5m2!1sen!2suk" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 </div>
 </div>
 </div>

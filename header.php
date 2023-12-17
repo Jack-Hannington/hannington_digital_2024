@@ -22,10 +22,6 @@
 <nav>
   <div class="navbar container">
     <div id="nav-logo" class="logo nav-item">
-  <!-- <div class="logo-wrapper">
-      <span class="logo">My Central Heating</span>
-      <span class="logo-subheading">An Appliance World Online company</span>
-</div> -->
       <?php
         if (function_exists('the_custom_logo')) {
             the_custom_logo();
@@ -36,7 +32,6 @@
     <div id="nav-toggle" class="menu-toggle nav-item">
       <div id="showMenu" class="nav-toggle">
         
-  <span></span>
   <span></span>
   <span></span>
 </div>
@@ -68,11 +63,11 @@
         )); ?>
       </div>
       <div class="menu-footer">
-      <button class="altius-btn__primary wp-block-button__link ">
-        <a href="/boiler-cover" title="book appointment">Get starter -></a>
-        
-      </button>
-      <span class="btn altius-btn__secondary mt-2 w-100"><tel:0161 794 3030>0161 794 3030</tel:0161 794 3030></span>
+      <div class="wp-block-button">
+        <a class="wp-block-button__link wp-element-button w-100" href="/consent-form" title="consent form">Get started -></a>
+      </div>
+      <div class="wp-block-button is-style-outline"><a class="wp-block-button__link wp-element-button w-100 bg-light mt-2
+">Ask us a question</a></div>
       <ul class="wp-block-social-links has-normal-icon-size is-layout-flex" style="
     margin: auto;
     justify-content: center;
@@ -87,9 +82,9 @@
       </div>
     </div>
     <div id="nav-cta" class="nav-item menu-cta">
-      <button class="altius-btn__primary wp-block-button__link ">
-        <a href="/boiler-cover" title="book appointment">Get started -></a>
-      </button>
+    <div class="wp-block-button">
+        <a class="wp-block-button__link wp-element-button nav-cta-button" href="/consent-form" title="consent form">Get started</a>
+      </div>
     </div>
   </div>
 </nav>
