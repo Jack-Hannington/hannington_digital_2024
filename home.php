@@ -17,7 +17,7 @@
             <div class="card-body">
               <h5 class="card-title"><?php the_title(); ?></h5>
               <p class="card-text"><?php the_excerpt(); ?></p>
-              <button class="btn altius-btn__primary">Read More</button>
+              <button class="btn">Read More</button>
             </div>
             </a> 
           </div>

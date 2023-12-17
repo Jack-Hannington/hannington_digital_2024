@@ -1,19 +1,19 @@
 /*
-Theme Name: Altius Healthcare 2023
-Theme URI: http://hanningtondigital.com/altius
+Theme Name: Cheshire Joint Injections
+Theme URI: http://hanningtondigital.com/cheshire_joint_injections
 Author: Jack Hannington
 Author URI: hannigtondigital.com
-Description: Customisable light theme for Altius Healthcare
+Description: Customisable light theme for Cheshire Joint Injections
 Version: 1.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Text Domain: altius_healthcare
+Text Domain: cheshire_joint_injections
 */
 
 :root {
-  --bg-color: #fff;
+  --bg-color: #fffff;
   --body-text-color: #273308;
-  --altius-dark-grey: #414548;
+  --dark-grey: #414548;
   --light-grey: #ededed;
   --body-font-size: 1rem;
   --green: #4F7F0C;
@@ -21,7 +21,7 @@ Text Domain: altius_healthcare
   --silver: #9a9494;
   --gold: #F0AA22;
   --dark-blue: #0f3e61;
-  --animate-duration: 300ms;
+  --animate-duration: 400ms;
   --default-box-shadow: 0px -4px 19px 3px rgb(0 0 0 / 13%);
 }
 
@@ -76,8 +76,8 @@ body {
   color: var(--light-grey);
 }
 
-.altius-dark-grey-bg {
-  background-color:var(--altius-dark-grey);
+.dark-grey-bg {
+  background-color:var(--dark-grey);
   color: var(--light-grey);
 }
 
@@ -118,6 +118,10 @@ body {
   box-shadow: var(--default-box-shadow);
 }
 
+.shadow-bottom {
+  box-shadow: 0px 9px 13px 1px #f4f4f4;
+}
+
 
 /*---- NAV ----*/
 
@@ -151,7 +155,7 @@ nav {
 
 .navbar-light {
   background-color: var(--light-grey);
-  color: var(--altius-dark-grey)
+  color: var(--dark-grey)
 }
 
 .custom-logo {
@@ -217,7 +221,7 @@ nav {
   justify-content: space-between;
   align-items: center;
   padding: 15px;
-  border-bottom: 1px solid #626262;
+  border-bottom: 1px solid #c6c6c6;
 }
 
 .menu,
@@ -254,9 +258,6 @@ nav {
   margin: 15px;
 }
 
-.menu-footer > .altius-btn__primary {
-  width: 100%;
-}
 
 .menu-item-has-children>a>svg {
   margin-left: 5px;
@@ -372,7 +373,7 @@ nav {
     align-items: end;
 }
 .sidebar-offers .offer {
-  width: 300px;
+  width: 320px;
 }
 .sidebar-offers {
   position: sticky;
@@ -478,6 +479,8 @@ nav {
     flex: 1;
     white-space: nowrap;
     text-align: right;
+    margin-right:0px;
+    margin-left:10px;
   }
   
 
@@ -734,13 +737,13 @@ strong {
 
 a {
   text-decoration: none;
-  color:var(--green);
-  transition: all 0.3s ease;
-
+  color:inherit;
+  transition: all 0.3s ease-in;
 }
 
 a:hover {
   color:var(--green);
+  opacity: 0.7;
 }
 
 .wp-block-buttons {
@@ -768,41 +771,21 @@ button, .btn {
   border:1px solid var(--light-grey);
   color: var(--green)!important;
 }
-.wp-block-button.altius-btn__primary .wp-block-button__link {
-  background-color: var(--green);
-  color: #F6F5F5;
-  border-radius: 4px;
-}
 
-.wp-block-button.altius-btn__secondary .wp-block-button__link {
+
+.wp-block-button.wp-block-button__link {
   background-color: #F6F5F5;
   color:#051F29;
 }
 
 /* Buttons and links */
 
-.altius-btn__primary {
-  background-color: var(--green);
-  color: #F6F5F5;
-  border-radius: 4px;
-}
 
-.altius-btn__primary > a {
-  color:white;
-}
 
 .wp-block-button__link:hover {
   color:white;
   opacity: 0.7;
 }
-
-.altius-btn__secondary {
-  background-color: #fff;
-  border-radius: 4px;
-  color:#051F29;
-  border:1px solid var(--light-grey);
-}
-
 
 
 .carousel-inner {
@@ -816,21 +799,20 @@ button, .btn {
 
 /* iFrames */
 .google-maps-embed {
-  height: 100%;
   border-radius: 10px;
   border: 1px solid #eded;
-  box-shadow: var(--default-box-shadow);
-  min-height: 400px;
+  /* box-shadow: var(--default-box-shadow); */
+  min-height: 250px;
 }
 
 .maps-container {
-  padding-top:20px;
+  padding-top:0px;
 }
 
 @media (min-width:996px){
   .maps-container {
-    padding-left:30px;
-    padding-top:0px;
+    padding-left:40px;
+    padding-top:58px;
   }
 }
 
@@ -1195,7 +1177,7 @@ details {
   border:1px solid var(--light-grey);
 }
 
-/* Altius Services ring */
+/* Services ring */
 
 
 .circle-container {
@@ -1384,6 +1366,18 @@ details {
   background:#f5f7f2;
 }
 
+.footer-menu {
+  display: flex;
+  gap:15px;
+  font-weight: 400;
+
+  font-size: 13px;
+}
+
+.footer-menu li a {
+  color:var(--body-text-color);
+}
+
 .footer-menu li {
   list-style-type:none;
   padding-inline-start:0;
@@ -1394,6 +1388,11 @@ details {
 }
 .footer-links {
   font-weight:300;
+  font-size: 13px;
+  display: flex;
+  justify-content: center;
+  gap:20px;
+  
 }
 
 footer .custom-logo {

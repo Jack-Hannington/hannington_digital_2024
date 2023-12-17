@@ -20,7 +20,7 @@ if ( !empty($header_height) ) : ?>
 <?php else : ?>
     <div class="page-title">
 <?php endif; ?>
-    <img class="background-image" src="<?php echo get_the_post_thumbnail_url(); ?>" alt="altius_background_image" >
+    <img class="background-image" src="<?php echo get_the_post_thumbnail_url(); ?>" alt="bg image" >
         <div class="page-header container">
             <h1><?php the_title(); ?></h1>
             <div class="max-750"><?php the_excerpt();?></div>
@@ -30,14 +30,14 @@ if ( !empty($header_height) ) : ?>
             $button_link = get_post_meta(get_the_ID(), 'header_button_link', true);
             // Check if the button text and button link custom fields have values
             if( $button_text && $button_link ): ?>
-                <a class="btn altius-btn__primary" href="<?php echo esc_url($button_link); ?>"><?php echo esc_html($button_text); ?></a>
+                <a class="btn" href="<?php echo esc_url($button_link); ?>"><?php echo esc_html($button_text); ?></a>
             <?php endif; ?>
             <?php 
             $button_text_two = get_post_meta(get_the_ID(), 'header_button_text_two', true);
             $button_link_two = get_post_meta(get_the_ID(), 'header_button_link_two', true);
             // Check if the button text and button link custom fields have values
             if( $button_text_two && $button_link_two ): ?>
-                <a class="btn altius-btn__secondary " href="<?php echo esc_url($button_link_two); ?>"><?php echo esc_html($button_text_two); ?></a>
+                <a class="btn" href="<?php echo esc_url($button_link_two); ?>"><?php echo esc_html($button_text_two); ?></a>
             <?php endif; ?>
             </div>
         </div>

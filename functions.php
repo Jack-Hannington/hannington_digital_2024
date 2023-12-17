@@ -65,6 +65,7 @@ function register_my_menus()
 {
     register_nav_menus([
         "header-menu" => __("Header Menu"),
+        "footer-menu" => __("Footer Menu"),
         "clinic-menu" => __("Clinic Menu"),
         "services-menu" => __("Services Menu"),
         "company-menu" => __("Company Menu"),
@@ -272,10 +273,11 @@ add_action( 'wp_footer', function() {
 
 // Add aos 
 function enqueue_aos_library() {
-    wp_enqueue_script( 'aos', 'https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.js', array(), '2.1.1', true );
-    wp_enqueue_style( 'aos', 'https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.css', array(), '2.1.1', 'all' );
+    wp_enqueue_script( 'aos', 'https://unpkg.com/aos@next/dist/aos.js', array(), '', true );
+    wp_enqueue_style( 'aos', 'https://unpkg.com/aos@next/dist/aos.css', array(), 'all' );
 }
 add_action( 'wp_enqueue_scripts', 'enqueue_aos_library' );
+
 
 add_theme_support( 'author' );
 

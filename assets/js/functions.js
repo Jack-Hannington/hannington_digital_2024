@@ -81,24 +81,16 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 
-// Add active class to Altius clinics slider
-jQuery(document).ready(function($) {
-  $('#altiusClinics').on('slide.bs.carousel', function (e) {
-    var index = $(e.relatedTarget).index();
-    $('.carousel-button').removeClass('active');
-    $('.carousel-button[data-bs-slide-to="' + index + '"]').addClass('active');
-  });
-});
-
 
 // Convert classes to data-aos animations 
 window.addEventListener('DOMContentLoaded', (event) => {
   const blocks = document.querySelectorAll('.wp-block-group');
    
   blocks.forEach((block) => {
-    console.log(block);
+    
       block.classList.forEach((className) => {
           if (className.startsWith('aos-')) {
+            console.log(block)
               const animationName = className.split('aos-')[1];
               block.dataset.aos = animationName;
               block.classList.remove(className);
@@ -107,8 +99,9 @@ window.addEventListener('DOMContentLoaded', (event) => {
   });
 
   AOS.init({
-      once: true,
-      duration: 700,
+      once: false,
+      delay: 100, 
+      duration: 1000,
   });
 });
 
