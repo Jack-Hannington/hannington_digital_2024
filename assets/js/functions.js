@@ -107,3 +107,82 @@ window.addEventListener('DOMContentLoaded', (event) => {
 
 
 
+// Lightbox
+document.addEventListener('DOMContentLoaded', function() {
+  const images = document.querySelectorAll('.scroll-container img');
+  const lightbox = document.createElement('div');
+  lightbox.className = 'lightbox';
+  document.body.appendChild(lightbox);
+
+  // Create navigation and dismiss buttons
+  const nextBtn = document.createElement('button');
+  nextBtn.innerText = '>';
+  nextBtn.className = 'btn next';
+  const prevBtn = document.createElement('button');
+  prevBtn.innerText = '<';
+  prevBtn.className = 'btn prev';
+  const dismissBtn = document.createElement('button');
+  dismissBtn.innerText = 'X';
+  dismissBtn.className = 'btn dismiss';
+
+  // Indicator
+  const indicator = document.createElement('div');
+  indicator.className = 'indicator';
+
+  lightbox.appendChild(prevBtn);
+  lightbox.appendChild(nextBtn);
+  lightbox.appendChild(dismissBtn);
+  lightbox.appendChild(indicator);
+
+  let currentIndex = 0;
+
+  images.forEach((image, index) => {
+    image.addEventListener('click', () => {
+      lightbox.style.display = 'flex';
+      const img = document.createElement('img');
+      img.src = image.src;
+      while (lightbox.firstChild !== prevBtn) {
+        lightbox.removeChild(lightbox.firstChild);
+      }
+      lightbox.insertBefore(img, lightbox.firstChild);
+      currentIndex = index;
+      updateIndicator();
+    });
+  });
+
+  nextBtn.addEventListener('click', () => {
+    navigate(1); // Next
+  });
+
+  prevBtn.addEventListener('click', () => {
+    navigate(-1); // Previous
+  });
+
+  dismissBtn.addEventListener('click', closeLightbox);
+  lightbox.addEventListener('click', (e) => {
+    if (e.target === lightbox) closeLightbox();
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (lightbox.style.display === 'flex') {
+      if (e.key === 'ArrowRight') navigate(1);
+      else if (e.key === 'ArrowLeft') navigate(-1);
+      else if (e.key === 'Escape') closeLightbox();
+    }
+  });
+
+  function navigate(direction) {
+    currentIndex = (currentIndex + direction + images.length) % images.length;
+    lightbox.querySelector('img').src = images[currentIndex].src;
+    updateIndicator();
+  }
+
+  function updateIndicator() {
+    indicator.innerText = `${currentIndex + 1} of ${images.length}`;
+  }
+
+  function closeLightbox() {
+    lightbox.style.display = 'none';
+  }
+});
+

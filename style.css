@@ -672,6 +672,7 @@ nav {
 
 .scroll-card {
   min-width: 300px;
+  cursor: zoom-in;
 }
 
 
@@ -686,6 +687,65 @@ nav {
 .scroll-card {
   min-width:300px;
 }
+
+/* Slider and lightbox */
+/* Lightbox styles */
+.lightbox {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  justify-content: center;
+  align-items: center;
+}
+
+.lightbox img {
+  max-width: 90%;
+  max-height: 80%;
+}
+
+/* Navigation & Dismiss Buttons */
+.lightbox .btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  color:var(--blue-grey);
+  background-color: #fff;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  z-index: 1001;
+  height: 40px;
+  border-radius: var(--default-border-radius);
+  width: 40px;
+}
+
+.lightbox .prev {
+  left: 10px;
+}
+
+.lightbox .next {
+  right: 10px;
+}
+
+.lightbox .dismiss {
+  position: absolute;
+  right: 10px;
+  top: 30px;
+}
+
+/* Indicator styles */
+.indicator {
+  position: absolute;
+  bottom: 20px;
+  color: #fff;
+  font-size: 16px;
+}
+
 
 /* Default gap between column container */
 :where(.wp-block-columns.is-layout-flex) {

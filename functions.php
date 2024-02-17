@@ -1,5 +1,5 @@
 <?php
-function altius_healthcare_enqueue_styles()
+function hannington__enqueue_styles()
 {
     // Add Bootstrap CSS
     wp_enqueue_style(
@@ -10,13 +10,13 @@ function altius_healthcare_enqueue_styles()
     );
 
     wp_enqueue_style(
-        "altius_healthcare-style",
+        "hannington_-style",
         get_stylesheet_uri() . '?v=' . time(), // Add cache busting query string
         [],
         null // Set version to null to avoid double version parameters in the URL
     );
 }
-add_action("wp_enqueue_scripts", "altius_healthcare_enqueue_styles");
+add_action("wp_enqueue_scripts", "hannington__enqueue_styles");
 
 
 //Disable lazy loading for cover images
@@ -29,7 +29,7 @@ function disable_lazyload_for_cover_images( $default, $tag_name, $context ) {
 add_filter( 'wp_lazy_loading_enabled', 'disable_lazyload_for_cover_images', 10, 3 );
 
 
-function altius_healthcare_enqueue_scripts()
+function hannington__enqueue_scripts()
 {
     // Add Bootstrap JS
     wp_enqueue_script(
@@ -40,9 +40,9 @@ function altius_healthcare_enqueue_scripts()
         true
     );
 
-    // wp_enqueue_script( 'altius_healthcare-js', get_template_directory_uri() . '/assets/js/main.js', array(), '1.0.0', true );
+    // wp_enqueue_script( 'hannington_-js', get_template_directory_uri() . '/assets/js/main.js', array(), '1.0.0', true );
 }
-add_action("wp_enqueue_scripts", "altius_healthcare_enqueue_scripts");
+add_action("wp_enqueue_scripts", "hannington__enqueue_scripts");
 
 function mytheme_register_block()
 {
@@ -91,7 +91,7 @@ add_action('wp_head', 'insert_meta_description');
 
 
 // Add custom logo support
-function altius_healthcare_setup()
+function hannington__setup()
 {
     add_theme_support("custom-logo", [
         "height" => 100,
@@ -101,20 +101,20 @@ function altius_healthcare_setup()
         "header-text" => ["site-title", "site-description"],
     ]);
 }
-add_action("after_setup_theme", "altius_healthcare_setup");
+add_action("after_setup_theme", "hannington__setup");
 
 // Add base js
-function altius_healthcare_scripts()
+function hannington__scripts()
 {
     wp_enqueue_script(
-        "altius-healthcare",
+        "hannington-",
         get_template_directory_uri() . "/assets/js/functions.js",
         ["jquery"],
         "1.0.0",
         true
     );
 }
-add_action("wp_enqueue_scripts", "altius_healthcare_scripts");
+add_action("wp_enqueue_scripts", "hannington__scripts");
 
 // Services toggle
 function enqueue_services_script() {
@@ -125,20 +125,20 @@ function enqueue_services_script() {
 add_action( 'wp_enqueue_scripts', 'enqueue_services_script' );
 
 
-function altius_healthcare_customizer( $wp_customize ) {
+function hannington__customizer( $wp_customize ) {
 
     // Register the alert bar section
     $wp_customize->add_section(
-        'altius_healthcare_alert_bar',
+        'hannington__alert_bar',
         array(
-            'title' => __( 'Alert Bar', 'altius_healthcare' ),
+            'title' => __( 'Alert Bar', 'hannington_' ),
             'priority' => 30,
         )
     );
 
     // Add settings and controls for the alert bar
     $wp_customize->add_setting(
-        'altius_healthcare_alert_bar_text',
+        'hannington__alert_bar_text',
         array(
             'default' => '',
             'type' => 'theme_mod',
@@ -150,11 +150,11 @@ function altius_healthcare_customizer( $wp_customize ) {
     $wp_customize->add_control(
         new WP_Customize_Control(
             $wp_customize,
-            'altius_healthcare_alert_bar_text_control',
+            'hannington__alert_bar_text_control',
             array(
-                'label' => __( 'Alert Bar Text', 'altius_healthcare' ),
-                'section' => 'altius_healthcare_alert_bar',
-                'settings' => 'altius_healthcare_alert_bar_text',
+                'label' => __( 'Alert Bar Text', 'hannington_' ),
+                'section' => 'hannington__alert_bar',
+                'settings' => 'hannington__alert_bar_text',
             )
         )
     );
@@ -162,17 +162,17 @@ function altius_healthcare_customizer( $wp_customize ) {
 $wp_customize->add_control(
     new WP_Customize_Control(
         $wp_customize,
-        'altius_healthcare_alert_bar_link_control',
+        'hannington__alert_bar_link_control',
         array(
-            'label' => __( 'Alert Bar Link', 'altius_healthcare' ),
-            'section' => 'altius_healthcare_alert_bar',
-            'settings' => 'altius_healthcare_alert_bar_link',
+            'label' => __( 'Alert Bar Link', 'hannington_' ),
+            'section' => 'hannington__alert_bar',
+            'settings' => 'hannington__alert_bar_link',
             'type' => 'url',
         )
     )
 );
     $wp_customize->add_setting(
-        'altius_healthcare_alert_bar_visible',
+        'hannington__alert_bar_visible',
         array(
             'default' => false,
             'type' => 'theme_mod',
@@ -184,18 +184,18 @@ $wp_customize->add_control(
     $wp_customize->add_control(
         new WP_Customize_Control(
             $wp_customize,
-            'altius_healthcare_alert_bar_visible_control',
+            'hannington__alert_bar_visible_control',
             array(
-                'label' => __( 'Alert Bar Visible', 'altius_healthcare' ),
-                'section' => 'altius_healthcare_alert_bar',
-                'settings' => 'altius_healthcare_alert_bar_visible',
+                'label' => __( 'Alert Bar Visible', 'hannington_' ),
+                'section' => 'hannington__alert_bar',
+                'settings' => 'hannington__alert_bar_visible',
                 'type' => 'checkbox',
             )
         )
     );
     // Add a new setting for alert bar link
 $wp_customize->add_setting(
-    'altius_healthcare_alert_bar_link',
+    'hannington__alert_bar_link',
     array(
         'default' => '',
         'type' => 'theme_mod',
@@ -208,11 +208,11 @@ $wp_customize->add_setting(
 $wp_customize->add_control(
     new WP_Customize_Control(
         $wp_customize,
-        'altius_healthcare_alert_bar_link_control',
+        'hannington__alert_bar_link_control',
         array(
-            'label' => __( 'Alert Bar Link', 'altius_healthcare' ),
-            'section' => 'altius_healthcare_alert_bar',
-            'settings' => 'altius_healthcare_alert_bar_link',
+            'label' => __( 'Alert Bar Link', 'hannington_' ),
+            'section' => 'hannington__alert_bar',
+            'settings' => 'hannington__alert_bar_link',
             'type' => 'url',
         )
     )
@@ -221,9 +221,9 @@ $wp_customize->add_control(
 
     // Register the social links section
     $wp_customize->add_section(
-        'altius_healthcare_social_links',
+        'hannington__social_links',
         array(
-            'title' => __( 'Social Links', 'altius_healthcare' ),
+            'title' => __( 'Social Links', 'hannington_' ),
             'priority' => 40,
         )
     );
@@ -232,7 +232,7 @@ $wp_customize->add_control(
     $social_links = ['twitter', 'youtube', 'facebook', 'instagram', 'tiktok', 'email'];
     foreach ($social_links as $link) {
         $wp_customize->add_setting(
-            'altius_healthcare_'.$link.'_link',
+            'hannington__'.$link.'_link',
             array(
                 'default' => '',
                 'type' => 'theme_mod',
@@ -244,11 +244,11 @@ $wp_customize->add_control(
         $wp_customize->add_control(
             new WP_Customize_Control(
                 $wp_customize,
-                'altius_healthcare_'.$link.'_link_control',
+                'hannington__'.$link.'_link_control',
                 array(
-                    'label' => __( ucfirst($link) . ' Link', 'altius_healthcare' ),
-                    'section' => 'altius_healthcare_social_links',
-                    'settings' => 'altius_healthcare_'.$link.'_link',
+                    'label' => __( ucfirst($link) . ' Link', 'hannington_' ),
+                    'section' => 'hannington__social_links',
+                    'settings' => 'hannington__'.$link.'_link',
                     'type' => 'url',
                 )
             )
@@ -256,14 +256,14 @@ $wp_customize->add_control(
     }
 }
 
-add_action( 'customize_register', 'altius_healthcare_customizer' );
+add_action( 'customize_register', 'hannington__customizer' );
 
 
 // Make sure the alert bar is visible even if the nav is fixed and 60px tall
 add_action( 'wp_footer', function() {
-    if( get_theme_mod( 'altius_healthcare_alert_bar_visible' ) ) {
-        $alert_bar_text = get_theme_mod( 'altius_healthcare_alert_bar_text' );
-        $alert_bar_link = get_theme_mod( 'altius_healthcare_alert_bar_link' );
+    if( get_theme_mod( 'hannington__alert_bar_visible' ) ) {
+        $alert_bar_text = get_theme_mod( 'hannington__alert_bar_text' );
+        $alert_bar_link = get_theme_mod( 'hannington__alert_bar_link' );
         echo '<div class="alert-bar">';
         echo '<a href="'.esc_url($alert_bar_link).'">'.esc_html($alert_bar_text).'</a>';
         echo '</div>';
