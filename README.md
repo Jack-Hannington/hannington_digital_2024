@@ -1,3 +1,3 @@
-# My Central Heating theme
+# Hannington Digital them
 
-Theme for Chehsire Joint Injections
+Theme for hanningtondigital.com 

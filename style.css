@@ -1,22 +1,30 @@
 /*
-Theme Name: Cheshire Joint Injections
-Theme URI: http://hanningtondigital.com/cheshire_joint_injections
+Theme Name: Hannington Digital 2024
+Theme URI: http://hanningtondigital.com/hannington-digital
 Author: Jack Hannington
 Author URI: hannigtondigital.com
-Description: Customisable light theme for Cheshire Joint Injections
+Description: Customisable light theme for Hannington Digital
 Version: 1.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Text Domain: cheshire_joint_injections
+Text Domain: hannington_digital
 */
 
 :root {
-  --bg-color: #fffff;
-  --body-text-color: #273308;
-  --dark-grey: #414548;
-  --light-grey: #ededed;
+  --bg-color: #ffffff;
+  --body-text-color: #304759;
+  --dark-grey: #2C2B39;
+  --blue-grey: #7F919E;
+  --background-grey: #DFE3EC;
+  --default-border-radius:10px;
+  --light-grey: #F6F6F6;
+  --medium-grey: #E3E3E3;
   --body-font-size: 1rem;
+  --default-line-height: 1.6rem;
+  --tight-line-height: 1rem;
   --green: #4F7F0C;
+  --light-orange: #FEF5F2;
+  --orange: #FE4F18;
   --bronze: #D2881B;
   --silver: #9a9494;
   --gold: #F0AA22;
@@ -53,18 +61,37 @@ Text Domain: cheshire_joint_injections
 html {
   height: 100%;
   scroll-behavior: smooth;
+  background: var(--background-grey);
 }
 
 body {
   font-family: 'Inter', sans-serif;
   font-weight: 400;
-  font-size: 1rem;
-  color: #212529;
+  font-size: var(--body-font-size);
+  color: var(--body-text-color);
   text-align: left;
-  line-height: 1.6;
-  background-color: var(--bg-color);
-  height: 100%;
+  background-color: var(--background-grey);
+  line-height: var(--default-line-height);
+  border-radius:var(--default-border-radius);
+
 }
+
+.site-content {
+  padding-left:0px;
+  padding-right:0px;
+  padding-bottom: 15px;
+  min-height: 94vh;
+  margin:1.5%;
+  background-color:var(--bg-color);
+  border-radius: var(--default-border-radius);
+}
+
+@media screen and (max-width:800px){
+  .site-content {
+    margin:0%;
+  }
+}
+
 
 /*---- Colours ----*/
 
@@ -113,6 +140,16 @@ body {
 }
 
 
+.orange {
+  color:var(--orange);
+}
+.background-orange {
+  background-color:var(--orange);
+}
+.border-orange {
+  border:1px solid var(--orange);
+}
+
 /* Shadows */
 .default-shadow {
   box-shadow: var(--default-box-shadow);
@@ -128,11 +165,12 @@ body {
 nav {
   width: 100%;
   margin: 0;
-  position: fixed;
   background-color:white;
   transition: 0.3s ease-in;
   top: 0;
-  box-shadow: 0px -4px 19px 3px rgb(0 0 0 / 13%);
+  border-radius: 10px 10px 0px 0px;
+  border-bottom: 1px solid var(--medium-grey);
+  /* box-shadow: 0px -4px 19px 3px rgb(0 0 0 / 13%); */
   z-index: 1000;
 }
 
@@ -165,8 +203,9 @@ nav {
 }
 
 .menu-container {
-  position: fixed;
+  position: absolute;
   top: 0;
+  border-radius: var(--default-border-radius);
   background-color: #fff;
   width: calc(100%);
   height: 100vh;
@@ -188,7 +227,7 @@ nav {
 #nav-toggle,
 .close-menu {
   text-align: right;
-  order:3;
+  order:1;
 }
 
 .nav-toggle {
@@ -208,7 +247,7 @@ nav {
 #showMenu span {
   width: 60%;
   height: 2px;
-  background-color: var(--green);
+  background-color: var(--blue-grey);
 }
 
 .close-menu span {
@@ -461,6 +500,7 @@ nav {
 
 #nav-cta {
   flex: 3;
+  order:3;
   text-align: right;
   margin-right: 10px;
 }
@@ -512,7 +552,7 @@ nav {
   .menu-body ul {
     display: flex;
     flex-direction: row;
-    justify-content: end;
+    justify-content: start;
     white-space: nowrap;
     font-size: 0.9rem;
   }
@@ -525,6 +565,8 @@ nav {
     color: var(--body-text-color);
     padding:10px 15px;
   }
+
+
 
   .menu-toggle,
   #closeMenu,
@@ -602,6 +644,12 @@ nav {
   max-width: 1200px;
 }
 
+@media (min-width:1500px){
+  .container {
+    max-width: 1380px;
+  }
+}
+
 @media (max-width:1000px){
   .container {
     padding-left:20px;
@@ -613,10 +661,30 @@ nav {
   gap: 0.3em;
 }
 
-.site-content {
-  margin-top: 65px;
-  padding-left:0px;
-  padding-right:0px;
+/* Increased specificity */
+.scroll-container {
+  overflow: auto !important;
+  flex-wrap: nowrap!important;
+  justify-content: flex-start;
+  display: flex!important;
+  flex-direction: row;
+}
+
+.scroll-card {
+  min-width: 300px;
+}
+
+
+.scroll-container {
+  overflow: auto!important;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  display: flex;
+  flex-direction: row;
+}
+
+.scroll-card {
+  min-width:300px;
 }
 
 /* Default gap between column container */
@@ -624,34 +692,13 @@ nav {
   gap: 4em;
 }
 
-/* leaf background */
-
-.leaf-bg {
-  background-image: url('http://cheshire-joint-injections.local/wp-content/uploads/2023/12/Logo-background-image.png');
-  background-repeat: no-repeat;
-  background-size:contain;
-}
-
-
-.leaf-bg-right {
-  background-image: url('http://cheshire-joint-injections.local/wp-content/uploads/2023/12/Logo-background-image.png');
-  background-repeat: no-repeat;
-  background-size:contain;
-  background-position: right;
-}
-
-@media (max-width: 650px) {
-  .leaf-bg {
-    background-size: cover;
-  }
-  .leaf-bg-left {
-    background-position: left;
-  }
-}
 
 /* Limit written content width  - useful for long text headings */
 
 .max-450 {
+  max-width: 450px;
+}
+.max-550 {
   max-width: 450px;
 }
 .max-650 {
@@ -672,8 +719,7 @@ h5,
 h6 {
   font-family: 'Manrope', 'Inter', sans-serif;
   font-weight: 700;
-  color: #273308;
-  letter-spacing: -0.5px;
+  color: var(--dark-grey);
 }
 /* .wp-block-heading {
   max-width: 700px;
@@ -682,22 +728,32 @@ h6 {
 
 h1 {
   font-weight: 700;
+  max-width: 750px;
+  font-size: calc(2.4rem + 1.5vw);
+  line-height: 2.8rem;
+}
 
+@media screen and (max-width:500px){
+ h1 {
+  font-size: calc(1.7rem + 1.5vw)
+ } 
+}
+
+.subheading {
+  font-size:18px;
+  line-height: 28px;
+   margin-top:8px;
 }
 
 
 @media (min-width : 1200px) {
-  .landing-h1 {
-    font-size: 3rem;
+  h1 {
+    font-size: 4rem;
     font-weight: 700;
-    line-height: 3.1rem;
+    line-height: 4rem;
   }
-}
-
-@media (max-width : 800px) {
-  landing-h1  {
-    font-size: 36px;
-    line-height: 40px;
+  .brow-text {
+    font-size: 1.2rem;
   }
 }
 
@@ -717,7 +773,7 @@ strong {
 /* Text preceding a section's heading */
 
 .brow-text {
-  color: var(--green)!important;
+  color: var(--orange)!important;
   margin-bottom: 5px;
   font-weight: 500;
 }
@@ -752,15 +808,15 @@ a:hover {
 
 .wp-block-button__link, .wp-element-button,
 button, .btn {
-  border-radius: 50px;
-  background-color: var(--green);
+  border-radius: var(--default-border-radius);
+  background-color: var(--dark-grey);
   color: #F6F5F5;
-  padding: 8px 20px;
+  padding: 10px 20px;
   font-size: 14px;
   font-weight: 500;
-  border:1px solid transparent;
+  border:none;
   transition: 0.3s;
-  box-shadow: inset 0px -3px 6px 2px #466818;
+  /* box-shadow: inset 0px -3px 6px 2px #5c5b5b; */
 }
 
 .wp-block-button .wp-block-button__link.is-style-outline, .wp-block-button.is-style-outline>.wp-block-button__link {
@@ -769,7 +825,7 @@ button, .btn {
   background-color: #fff;
   box-shadow:  inset 0px -3px 6px 2px #f4f4f4;
   border:1px solid var(--light-grey);
-  color: var(--green)!important;
+  color: var(--orange)!important;
 }
 
 
@@ -1041,6 +1097,10 @@ input, textarea {
   flex-direction: column;
 }
 
+.article-title {
+  font-size: 34px;
+}
+
 @media only screen and (max-width: 1000px) {
   .recent-posts {
     gap:15px;
@@ -1050,7 +1110,7 @@ input, textarea {
   }
   .article-title {
     line-height: 36px;
-    font-size: 40px;
+    font-size: 30px;
   }
 }
 
@@ -1361,11 +1421,7 @@ details {
 
 /* Footers */
 
-.site-footer {
-  border-top:1px solid #ededed;
-  background:#f5f7f2;
-}
-
+  
 .footer-menu {
   display: flex;
   gap:15px;
